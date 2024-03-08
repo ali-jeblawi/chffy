@@ -1,0 +1,32 @@
+'use client';
+
+import Image from 'next/image'
+import Link from 'next/link'
+import React, { useEffect } from 'react'
+import { useTranslation } from 'react-i18next';
+
+import i18next from 'i18next';
+
+export default function CallToAction() {
+  const { t } = useTranslation();
+
+  
+  return (
+    <section className="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="5" style={{background:'url(/images/slider/1.jpg)'}}>
+    <div className="container">
+        <div className="row justify-content-center">
+            <div className="col-lg-8 col-md-12 text-center">
+               <span><i className="star-rating"></i><i className="star-rating"></i><i className="star-rating"></i><i className="star-rating"></i><i className="star-rating"></i></span>
+                <div className="section-subtitle"><span>Chffy chffy</span></div>
+                <div className="section-title"><span>type type type</span></div>
+            </div>
+        </div>
+        <div className="row">
+            <div className="text-center col-md-12">
+            <div className="butn-light mt-30"> <a href="#contact"><span>Book Now</span></a> </div>
+            </div>
+        </div>
+    </div>
+</section>
+  );
+}
