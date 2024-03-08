@@ -14,7 +14,7 @@ export default function Footer() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-3 mb-30">
-                        <div className="sub-title border-footer-light whte">Contact Us!</div>
+                        <div className="sub-title border-footer-light whte">Contact Us</div>
                     </div>
                     <div className="col-md-4 offset-md-1">
                         <div className="item">
