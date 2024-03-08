@@ -9,6 +9,7 @@ import Services from "@/components/services";
 import Top from "@/components/top";
 import CallToAction from "@/components/call-to-action";
 import Testimonials from "@/components/testimonials";
+import Cars from "@/components/cars";
 
 
 
@@ -21,7 +22,8 @@ export default async function Home({ params: { locale } }: any) {
       <Hero />
       <About />
       <CallToAction />
-      <Services/>
+      <Services />      <Cars/>
+
       <Testimonials />
       <Contat/>
 

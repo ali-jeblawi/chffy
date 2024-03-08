@@ -56,10 +56,13 @@ export default function Navbar() {
            
             <li className="nav-item">
               <Link className="nav-link" href="#services">Services</Link>
+            </li>   <li className="nav-item">
+              <Link className="nav-link" href="#cars">Cars</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" href="#testimonials">Testimonials</Link>
             </li>
+         
             <li className="nav-item">
               <Link className="nav-link" href="#contact">Contact</Link>
             </li>

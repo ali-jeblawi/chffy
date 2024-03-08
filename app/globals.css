@@ -2430,7 +2430,10 @@ hr {
 /* ======= Rooms 3 style ======= */
 .rooms3 {
     position: relative;
-    overflow: hidden
+    overflow: hidden;
+}
+.rooms3 img{
+    height: 300px;
 }
 .rooms3 .room-header {
     background-color: transparent;
