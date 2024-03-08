@@ -24,7 +24,7 @@ export default function Testimonials() {
                         <h3 className="sub-title border-bot-dark">Testiominals</h3>
                     </div>
                     <div className="col-md-8">
-                        <div className="section-title whte">What Client's Say?</div>
+                        <div className="section-title whte">What Client&apos;s Say?</div>
                         <div className="testimonials-box">
                               <Swiper
         className="owl-carousel owl-theme"
