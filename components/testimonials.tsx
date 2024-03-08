@@ -48,7 +48,7 @@ export default function Testimonials() {
                                         <i className="star-rating"></i>
                                         <i className="star-rating"></i>
                                     </span>
-                                    <h5>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, quaerat. Quasi praesentium debitis totam molestiae cupiditate. Est, sunt veniam, aperiam velit debitis cupiditate beatae suscipit unde adipisci expedita eos ratione!"</h5>
+                                    <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, quaerat. Quasi praesentium debitis totam molestiae cupiditate. Est, sunt veniam, aperiam velit debitis cupiditate beatae suscipit unde adipisci expedita eos ratione!</h5>
                                     <div className="info">
                                         <div className="author-img"> <Image fill src="/images/team/1.jpg" alt=""/> </div>
                                         <div className="cont">
@@ -66,7 +66,7 @@ export default function Testimonials() {
                                         <i className="star-rating"></i>
                                         <i className="star-rating"></i>
                                     </span>
-                                    <h5>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, quaerat. Quasi praesentium debitis totam molestiae cupiditate. Est, sunt veniam, aperiam velit debitis cupiditate beatae suscipit unde adipisci expedita eos ratione!"</h5>
+                                    <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, quaerat. Quasi praesentium debitis totam molestiae cupiditate. Est, sunt veniam, aperiam velit debitis cupiditate beatae suscipit unde adipisci expedita eos ratione!</h5>
                                     <div className="info">
                                         <div className="author-img"> <Image fill src="/images/team/3.jpg" alt=""/> </div>
                                         <div className="cont">
