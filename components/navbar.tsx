@@ -107,7 +107,7 @@ export default function Navbar() {
          
           <div className='menu-links m-auto text-center'>
           <ul className="navbar-nav ms-auto">
-            {links.map(i=><li className="nav-item">
+            {links.map(i=><li className="nav-item" key={i.label}>
               <a className="nav-link" href={i.path} role="button"  onClick={toggleMenu}>{i.label}</a>
             </li>)} 
            
