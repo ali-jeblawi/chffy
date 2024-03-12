@@ -22,15 +22,12 @@ export default async function Home({ params: { locale } }: any) {
       <Hero />
       <About />
       <CallToAction />
-      <Services />      <Cars/>
-
-      <Testimonials />
+      <Services />
+      <Cars />
+      {/* <Testimonials /> */}
       <Contat/>
-
       <Footer />
-      {/* 
-      
-      <Top/> */}
+      <Top/>
       </>
   );
 }

@@ -15,7 +15,13 @@ export default function Footer() {
                 <div className="row">
                     <div className="col-md-3 mb-30">
                         <div className="sub-title border-footer-light whte">Contact Us</div>
-                    </div>
+                        <div className="logo-wrapper">
+          <Link className="logo mt-4" href={'/'}>
+            <Image src="/images/logo-white.png" className="logo-img" alt="" width={35} height={45} />
+            <span>{t('Chffy')}</span>
+          </Link>
+        </div>
+                        </div>
                     <div className="col-md-4 offset-md-1">
                         <div className="item">
                             <h3>Get in touch</h3>
@@ -41,9 +47,9 @@ export default function Footer() {
                         <div className="item">
                             <h3>Our Services</h3>
                             <ul className="footer-explore-list list-unstyled">
-                                <li><a href="#services">Service 1</a></li>
-                                <li><a href="#services">Service 2</a></li>
-                                <li><a href="#services">Service 3</a></li>
+                                    <li><a href="#services">{t('Service1Label')}</a></li>
+                                    <li><a href="#services">{t('Service2Label')}</a></li>
+                                    <li><a href="#services">{t('Service3Label')}</a></li>
                             </ul>
                         </div>
                     </div>

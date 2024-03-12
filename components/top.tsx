@@ -21,11 +21,11 @@ export default function Top() {
     
     const showElemOnScroll = function () {
         if (window.scrollY > 100) {
-            document.querySelector("header")?.classList.add("pix-header-fixed");
+            document.querySelector(".navbar")?.classList.add("header-fixed");
             document.querySelector(".back-top")?.classList.add("d-flex");
             document.querySelector(".back-top")?.classList.remove("d-none");
         } else {
-            document.querySelector("header")?.classList.remove("pix-header-fixed");
+            document.querySelector(".navbar")?.classList.remove("header-fixed");
             document.querySelector(".back-top")?.classList.remove("d-flex");
             document.querySelector(".back-top")?.classList.add("d-none");
         }

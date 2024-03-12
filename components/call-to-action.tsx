@@ -17,13 +17,13 @@ export default function CallToAction() {
         <div className="row justify-content-center">
             <div className="col-lg-8 col-md-12 text-center">
                <span><i className="star-rating"></i><i className="star-rating"></i><i className="star-rating"></i><i className="star-rating"></i><i className="star-rating"></i></span>
-                <div className="section-subtitle"><span>Chffy chffy</span></div>
-                <div className="section-title"><span>type type type</span></div>
+            <div className="section-subtitle"><span>{t('CallToActionLabel')}</span></div>
+            <div className="section-title"><span>{t('CallToActionDesc')}</span></div>
             </div>
         </div>
         <div className="row">
             <div className="text-center col-md-12">
-            <div className="butn-light mt-30"> <a href="#contact"><span>Book Now</span></a> </div>
+            <div className="butn-light mt-30"> <a href="#contact"><span>{t('ReserveYourVoyage')}</span></a> </div>
             </div>
         </div>
     </div>

@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.0",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.2",
+    "gsap": "^3.12.5",
     "i18next": "^23.7.16",
     "i18next-resources-to-backend": "^1.2.0",
     "moment": "^2.30.1",

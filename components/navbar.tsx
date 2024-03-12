@@ -4,8 +4,11 @@ import i18nConfig from '@/i18nConfig';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next';
+import { gsap } from 'gsap';
+import { useGSAP} from '@gsap/react'
+
 
 export default function Navbar() {
 
@@ -13,6 +16,35 @@ export default function Navbar() {
   const currentLocale = i18n.language;
   const router = useRouter();
   const currentPathname = usePathname();
+  const tl = useRef<any>(null);
+  const container = useRef(null);
+  const [isMenuOpen, setisMenuOpen] = useState(false);
+
+  useGSAP(() => {
+    gsap.set('.nav-link', { y: 75 });
+
+    tl.current = gsap.timeline({ paused: true })
+      .to('.menu-overlay', {
+        duration: 1.25,
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        ease: "power4.inOut"
+      }).to(".nav-link", {
+        y: 0,
+        duration: 1,
+        stagger: 0.1,
+        delay: -0.75,
+        ease: "power4.inOut"
+      });
+
+  }, { scope: container });
+  
+  useEffect(() => {
+    if (isMenuOpen) {
+      tl.current.play();
+    } else {
+      tl.current.reverse();
+    }
+  }, [isMenuOpen]);
 
   const handleChange = (newLocale: string) => {
     const days = 30;
@@ -35,37 +67,50 @@ export default function Navbar() {
     i?.classList.remove("no-scroll");
   }
   
+  const links = [
+    { path: '#home', label: t('Home') },
+    { path: '#about', label: t('About') },
+    { path: '#services', label: t('Services') },
+    { path: '#cars', label: t('Cars') },
+    { path: '#contact', label: t('Contact') }
+  ];
+
+  const toggleMenu = () => {
+    setisMenuOpen(!isMenuOpen);
+  }
 
   return (
-    <nav className="navbar navbar-expand-lg">
+    <nav className="navbar" ref={container}>
       <div className="container">
         <div className="logo-wrapper">
           <Link className="logo" href={'/'}>
             <Image src="/images/logo-dark.png" className="logo-img" alt="" width={35} height={45} />
+            <span>{t('Chffy')}</span>
           </Link>
         </div>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span className="navbar-toggler-icon"><i className="ti-menu"></i></span> </button>
-        <div className="collapse navbar-collapse" id="navbar">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <a className="nav-link active" href="#home" role="button" >Home</a>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="#about">About</Link>
-            </li>
-           
-            <li className="nav-item">
-              <Link className="nav-link" href="#services">Services</Link>
-            </li>   <li className="nav-item">
-              <Link className="nav-link" href="#cars">Cars</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="#testimonials">Testimonials</Link>
-            </li>
+        <div className="butn-light menu" onClick={toggleMenu}><a href="#"> <span>{t('Menu')}</span></a></div>
+
+      </div>
+      <div className='menu-overlay'>
+        <div className='menu-overlay-bar w-100 h-100'>
+          <div className='menu-logo'>
+          <div className="logo-wrapper">
+          <Link className="logo" href={'/'}  onClick={toggleMenu}>
+            <Image src="/images/logo-dark.png" className="logo-img" alt="" width={35} height={45} />
+            <span>{t('Chffy')}</span>
+          </Link>
+            </div>
+            <div className='menu-close'  onClick={toggleMenu}>
+            <p>{t('Close')}</p>
+          </div>
+          </div>
          
-            <li className="nav-item">
-              <Link className="nav-link" href="#contact">Contact</Link>
-            </li>
+          <div className='menu-links m-auto text-center'>
+          <ul className="navbar-nav ms-auto">
+            {links.map(i=><li className="nav-item">
+              <a className="nav-link" href={i.path} role="button"  onClick={toggleMenu}>{i.label}</a>
+            </li>)} 
+           
             <li className="nav-item">
               <span
                 className="nav-link"
@@ -78,7 +123,9 @@ export default function Navbar() {
               </span>
             </li>
           </ul>
+          </div>
         </div>
+
       </div>
     </nav>
   );

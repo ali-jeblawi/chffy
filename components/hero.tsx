@@ -52,9 +52,9 @@ export default function Hero() {
                 <i className="star-rating"></i>
                 <i className="star-rating"></i>
               </span>
-                <h4>Welcome to Chffy</h4>
-                <h1>Lorem Lorem Lorem Lorem Lore</h1>
-                <div className="butn-light mt-30 mb-30"> <a href="#about"><span>Explore More</span></a> </div>
+                <h4>{t('HeaderLabel')}</h4>
+                <h1>{t('HeaderDesc')}</h1>
+                <div className="butn-light mt-30 mb-30"> <a href="#about"><span>{t('ExploreMore')}</span></a> </div>
               </div>
             </div>
           </div>

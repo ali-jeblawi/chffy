@@ -19,15 +19,15 @@ export default function About() {
         <div className="container">
             <div className="row">
                 <div className="col-md-3">
-                    <div className="sub-title border-bot-light">Welcome to</div>
+                        <div className="sub-title border-bot-light">{t('AboutUs')}</div>
                 </div>
                 <div className="col-md-9">
                     <div className="section-title">Chffy</div>
                     <div className="row">
                         <div className="col-lg-6 col-md-12">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet eius rerum mollitia? Quaerat illum neque dolorum sit exercitationem alias, illo, accusantium, quasi non modi molestiae? Aspernatur fugit id fuga tempora?</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam rerum reiciendis facilis sapiente quisquam.</p>
-                            <div className="ratting-point mt-30 mb-30">
+                                <p>{t('About1')}</p>
+                                <p>{t('About2')}</p>
+                                <div className="ratting-point mt-30 mb-30">
                                 <div className="features-ratting">
                                     <h3>4.9</h3>
                                 </div>
@@ -52,7 +52,8 @@ export default function About() {
                             </div>
                         </div>
                         </div>
-                        <div className="section-title mt-4 mb-2">Our Partners</div>
+                        <div className="section-title mt-4 mb-2">{t('OurPartners')}</div>
+                        <p>{t('OurPartnersDesc')}</p>
 
                         <Swiper
                     className="logo-carousel wow fadeOut mt-3" data-wow-delay="0.3s"
