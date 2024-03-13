@@ -12,7 +12,7 @@ export default function CallToAction() {
 
   
   return (
-    <section className="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="5" style={{background:'url(/images/slider/1.jpg)'}}>
+    <section className="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="5" style={{ background: 'url(/images/slider/1.jpeg)',backgroundSize:'cover'}}>
     <div className="container">
         <div className="row justify-content-center">
             <div className="col-lg-8 col-md-12 text-center">

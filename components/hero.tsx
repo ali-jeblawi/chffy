@@ -40,7 +40,7 @@ export default function Hero() {
  
   
   return (
-    <aside className="hero-section">
+    <aside className="hero-section" id="home">
       <div className="hero-inner h-100 w-100">
         <div className="v-middle caption text-center">
           <div className="container">
@@ -84,13 +84,13 @@ export default function Hero() {
           <Image src="/images/slider/1.jpeg" alt="php" fill className='hero-img' />
         </SwiperSlide>
         <SwiperSlide style={{ position: 'relative' }}>
-          <Image src="/images/slider/3.jpg" alt="php" fill />
+          <Image src="/images/about/2.jpg" alt="php" fill className='hero-img'  />
         </SwiperSlide>
         <SwiperSlide style={{ position: 'relative' }}>
-          <Image src="/images/slider/4.jpg" alt="php" fill className='hero-img' />
+        <Image src="/images/about/3.jpg" alt="php" fill className='hero-img'  />
         </SwiperSlide>
         <SwiperSlide style={{ position: 'relative' }}>
-          <Image src="/images/slider/5.jpg" alt="php" fill className='hero-img' />
+        <Image src="/images/about/4.jpg" alt="php" fill className='hero-img'  />
         </SwiperSlide>
       </Swiper>
     </aside>

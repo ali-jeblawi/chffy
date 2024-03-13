@@ -22,11 +22,8 @@ export default function Cars() {
                     <div className="col-md-9">
                         <div className="section-title">Our Cars</div>
                         <p>Reserve the car you prefer (depending on availability). Choose from a variety of sizes and styles. Lorem ipsum viverra tristique justo duis vitae diaminte neque nivamus aestan artines in the nedana mis erodino fermen.</p>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-md-12">
-                        <Swiper
+                        <div className="col-md-12 mt-5">
+                        {/* <Swiper
                             className="wow fadeOut mt-3" data-wow-delay="0.3s"
                             style={{ height: '350px' }}
                             spaceBetween={20}
@@ -113,9 +110,69 @@ export default function Cars() {
                                 </div>
                             </SwiperSlide>
                       
-                        </Swiper>
+                        </Swiper> */}
+                             <Swiper
+                    className=" wow fadeOut mt-3" data-wow-delay="0.3s"
+                            spaceBetween={20}
+                
+                    slidesPerView={4}
+                    breakpoints={{
+                        319: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        640: {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                        768: {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                        900: {
+                            slidesPerView: 4,
+                            spaceBetween: 20,
+                        }
+                }}
+                    modules={[Autoplay]}
+                    autoplay={{
+                        delay: 2200,
+                        pauseOnMouseEnter: false,
+                        disableOnInteraction: false,
+                    }}
+                    loop={true}
+                    key={`${i18next.language}swiper`}
+                    speed={3000}>
+      
+        
+                    <SwiperSlide>
+                    <Image src="/images/cars/bmw.png"
+                        alt="bmw" width={80} height={80} />
+                    </SwiperSlide>
+                   
+                    
+                    <SwiperSlide>
+                    <Image src="/images/cars/Mercedes.png"
+                        alt="Mercedes" width={75} height={75} />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                    <Image src="/images/cars/Ford.png"
+                        alt="Ford" width={150} height={70} />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                    <Image src="/images/cars/GMC-Logo.png"
+                        alt="GMC" width={130} height={50} />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                    <Image src="/images/cars/Chevrolet.png"
+                        alt="Chevrolet" width={120} height={60} />
+                            </SwiperSlide>
+                </Swiper>
                     </div>
+                    </div>
+                   
                 </div>
+              
             </div>
         </section>
     );

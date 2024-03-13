@@ -88,12 +88,14 @@ export default function Navbar() {
             <span>{t('Chffy')}</span>
           </Link>
         </div>
-        <div className="butn-light menu" onClick={toggleMenu}><a href="#"> <span>{t('Menu')}</span></a></div>
+        <div className="butn-light menu" onClick={toggleMenu}>
+          <svg xmlns="http://www.w3.org/2000/svg" className="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeMiterlimit="10" stroke-width="32" d="M80 160h352M80 256h352M80 352h352" /></svg>
+        </div>
 
       </div>
       <div className='menu-overlay'>
         <div className='menu-overlay-bar w-100 h-100'>
-          <div className='menu-logo'>
+          <div className='menu-logo container'>
           <div className="logo-wrapper">
           <Link className="logo" href={'/'}  onClick={toggleMenu}>
             <Image src="/images/logo-dark.png" className="logo-img" alt="" width={35} height={45} />
@@ -105,7 +107,7 @@ export default function Navbar() {
           </div>
           </div>
          
-          <div className='menu-links m-auto text-center'>
+          <div className='menu-links mx-auto text-center' style={{marginTop:100}}>
           <ul className="navbar-nav ms-auto">
             {links.map(i=><li className="nav-item" key={i.label}>
               <a className="nav-link" href={i.path} role="button"  onClick={toggleMenu}>{i.label}</a>

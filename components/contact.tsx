@@ -20,7 +20,9 @@ export default function Contat() {
         type: '',
         content: ''
     });
-
+    const [reservationType, setReservationType] = useState("-1");
+    const [tripType, setTripType] = useState("-1");
+    
     const validateForm = () => {
         const _errors: any = {};
         const emailReqex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -83,21 +85,67 @@ export default function Contat() {
                                             </div>
                                         </div>
                                         <div className="row">
-                                            <div className="col-md-6 form-group">
+                                            <div className="col-md-4 form-group">
                                                 <input name="name" type="text" placeholder="Your Name *" required/>
                                             </div>
-                                            <div className="col-md-6 form-group">
+                                            <div className="col-md-4 form-group">
                                                 <input name="email" type="email" placeholder="Your Email *" required/>
                                             </div>
-                                            <div className="col-md-6 form-group">
-                                                <input name="phone" type="text" placeholder="Your Number *" required/>
+                                            <div className="col-md-4 form-group">
+                                                <input name="phone" type="text" placeholder="Your Phone *" required/>
                                             </div>
-                                            <div className="col-md-6 form-group">
-                                                <input name="subject" type="text" placeholder="Subject *" required/>
+                                            <div className="col-md-4 form-group">
+                                                    <select name="tripType" value={tripType} onChange={(e:any)=>setTripType(e.target.value)}>
+                                                        <option selected disabled value={'-1'}>Trip type *</option>
+                                                        <option value={'0'}>Airport</option>
+                                                        <option value={'1'}>Other</option>
+                                                        </select>
+                                                </div>
+                                                <div className="col-md-4 form-group">
+                                                    <select name="reservationType" value={reservationType} onChange={(e:any)=>setReservationType(e.target.value)} >
+                                                        <option selected disabled value={"-1"}>Reservation type *</option>
+                                                        <option value={"0"}>Hour</option>
+                                                        <option value={"1"}>Day</option>
+                                                        <option value={"2"}>Trip</option>
+                                                        </select>
+                                                </div>
+                                                <div className="col-md-4 form-group">
                                             </div>
-                                            <div className="col-md-12 form-group">
+                                                {tripType === '0' && (
+                                                    <>
+                                                         <div className="col-md-4 form-group">
+                                                <input name="tripNumber" type="text" placeholder="Trip number *" required/>
+                                                </div>
+                                                <div className="col-md-4 form-group">
+                                                <input name="arrivalHour" type="text" placeholder="Arrival hour *" required/>
+                                                </div>
+                                                <div className="col-md-4 form-group">
+                                                <input name="airlinesName" type="text" placeholder="Airlines name *" required/>
+                                                        </div>
+                                                    </>
+                                                )}
+                                               
+                                                {(reservationType === "2") && (
+                                                    <>
+                                                       <div className="col-md-4 form-group">
+                                                <input name="source" type="text" placeholder="Source *" required/>
+                                                </div>
+                                                <div className="col-md-4 form-group">
+                                                <input name="destination" type="text" placeholder="Destination *" required/>
+                                                </div>
+                                                        </>
+                                                )}
+                                                {(reservationType === "0" || reservationType === "1") && (
+                                                     <div className="col-md-4 form-group">
+                                                     <input name="startingPoint" type="text" placeholder="Starting point *" required/>
+                                                     </div>
+                                                )}
+                                               
+                                             
+                                               
+                                            {/* <div className="col-md-12 form-group">
                                                     <textarea name="message" id="message" cols={30} rows={4} placeholder="Message *" required></textarea>
-                                            </div>
+                                            </div> */}
                                             <div className="col-md-12 mt-10">
                                                 <button type="submit" className="butn-dark2"><span>Send Message</span></button>
                                             </div>

@@ -140,6 +140,7 @@ input[type="password"],
 input[type="email"],
 input[type="text"],
 input[type="file"],
+select,
 textarea {
     max-width: 100%;
     margin-bottom: 0px;
@@ -148,7 +149,7 @@ textarea {
     background-color: transparent;
     -webkit-box-shadow: none;
     box-shadow: none;
-    border-width: 0 0 1px;
+    border: 0;
     border-style: solid;
     display: block;
     width: 100%;
@@ -6081,9 +6082,12 @@ font-size: 15px;
     color: #fff;
     cursor: pointer;
 }
-.butn-light.menu a{
-    padding: 7px 9px !important;
-    
+.butn-light.menu svg{
+    width:35px;
+    cursor: pointer;
+}
+.butn-light.menu svg path{
+    stroke:#fff;
 }
 .menu-close p {
     color: #fff;
@@ -6220,4 +6224,7 @@ font-size: 15px;
 }
 .return-to-top svg path{
     stroke: #fff;
+}
+select{
+    padding-inline-start: 0;
 }
