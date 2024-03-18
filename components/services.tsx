@@ -22,7 +22,7 @@ export default function Services() {
             <div className="row">
                 <div className="col-md-12">
                     <div className="row justify-content-between">
-                    <div className="item col-12 col-md-6 col-lg-4"> <span className="number">03</span>
+                    <div className="item col-12 col-md-6 col-lg-4"> <span className="number">01</span>
                             <div className="icon"><i className="flaticon-bed"></i></div>
                             <h5>{t('Service3Label')}</h5>
                                 <p>{t('Service3Desc')}</p>
@@ -31,7 +31,7 @@ export default function Services() {
                             <div className="icon"><i className="flaticon-car"></i></div>
                             <h5>{t('Service2Label')}</h5>
                                 <p>{t('Service2Desc')}</p>
-                        </div> <div className="item col-12 col-md-6 col-lg-4"> <span className="number">01</span>
+                        </div> <div className="item col-12 col-md-6 col-lg-4"> <span className="number">03</span>
                             <div className="icon"><i className="flaticon-world"></i></div>
                                 <h5>{t('Service1Label')}</h5>
                                 <p>{t('Service1Desc')}</p>
