@@ -42,17 +42,17 @@ export default function Contat() {
         <div className="container">
             <div className="row mb-30">
                 <div className="col-md-3">
-                    <div className="sub-title border-bot-light">Contact Us</div>
+                        <div className="sub-title border-bot-light">{t("ContactUs")}</div>
                 </div>
                 <div className="col-md-9">
-                    <div className="section-title">Contact Us</div>
-                    <p className="mb-30">Lorem ipsum viverra tristique justo duis vitae diaminte neque nivamus aestan ateuene artines ariianu the ateliten finibus viverra neclacus in the nedana mis erodino fermes dis parturient monte nascete ridiculus in the miss martin.</p>
+                        <div className="section-title">{t('ContactUsLabel')}</div>
+                        <p className="mb-30"> {t('ContactUsDesc')}</p>
                     <div className="row mb-30">
                                 <div className="col-lg-4 col-md-12">
                                     <div className="reservations mb-15">
                                         <div className="icon"><span className="flaticon-call"></span></div>
                                         <div className="text">
-                                            <p>Reservation</p> <a href="tel:855-100-4444">+966 57 458 4023</a>
+                                            <p>Phone Reservation</p> <a href="tel:855-100-4444">+966 57 458 4023</a>
                                         </div>
                                     </div>
                                 </div>

@@ -20,8 +20,12 @@ export default function Cars() {
                         <div className="sub-title border-bot-light">Discover</div>
                     </div>
                     <div className="col-md-9">
-                        <div className="section-title">Our Cars</div>
-                        <p>Reserve the car you prefer (depending on availability). Choose from a variety of sizes and styles. Lorem ipsum viverra tristique justo duis vitae diaminte neque nivamus aestan artines in the nedana mis erodino fermen.</p>
+                        <div className="section-title">{t('OurCars')}</div>
+
+                        <p>{t('OurCarsDesc1')}</p>
+                        <p>{t('OurCarsDesc2')}</p>
+                        <p>{t('OurCarsDesc3')}</p>
+                        <p>{t('OurCarsDesc4')}</p>
                         <div className="col-md-12 mt-5">
                         {/* <Swiper
                             className="wow fadeOut mt-3" data-wow-delay="0.3s"

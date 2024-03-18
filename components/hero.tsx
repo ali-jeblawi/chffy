@@ -19,23 +19,6 @@ export default function Hero() {
 
   useEffect(() => {
     const w = new WOW.WOW().init();
-  //   heroSection.current.vegas({
-  //     slides: [{
-  //         src: "/images/slider/1.jpg"
-  //     }, {
-  //         src: "/images/slider/3.jpg"
-  //     }, {
-  //         src: "/images/slider/4.jpg"
-  //     }, {
-  //         src: "/images/slider/5.jpg"
-  //     }],
-  //     overlay: true,
-  //     transition: 'fade2',
-  //     animation: 'heroUpRight',
-  //     transitionDuration: 1000,
-  //     delay: 10000,
-  //     animationDuration: 20000
-  // });
   }, []);
  
   
@@ -54,7 +37,7 @@ export default function Hero() {
               </span>
                 <h4>{t('HeaderLabel')}</h4>
                 <h1>{t('HeaderDesc')}</h1>
-                <div className="butn-light mt-30 mb-30"> <a href="#about"><span>{t('ExploreMore')}</span></a> </div>
+                <div className="butn-light mt-30 mb-30"> <a href="#cars"><span>{t('ExploreMore')}</span></a> </div>
               </div>
             </div>
           </div>

@@ -15,10 +15,10 @@ export default function CallToAction() {
     <section className="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="5" style={{ background: 'url(/images/slider/1.jpeg)',backgroundSize:'cover'}}>
     <div className="container">
         <div className="row justify-content-center">
-            <div className="col-lg-8 col-md-12 text-center">
-               <span><i className="star-rating"></i><i className="star-rating"></i><i className="star-rating"></i><i className="star-rating"></i><i className="star-rating"></i></span>
-            <div className="section-subtitle"><span>{t('CallToActionLabel')}</span></div>
-            <div className="section-title"><span>{t('CallToActionDesc')}</span></div>
+            <div className="col-lg-10 col-md-12 text-center">
+               {/* <span><i className="star-rating"></i><i className="star-rating"></i><i className="star-rating"></i><i className="star-rating"></i><i className="star-rating"></i></span> */}
+            <div className="section-title"><span>{t('CallToActionLabel')}</span></div>
+            <div className="section-subtitle"><span>{t('CallToActionDesc')}</span></div>
             </div>
         </div>
         <div className="row">

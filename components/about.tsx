@@ -14,7 +14,7 @@ export default function About() {
     const { t } = useTranslation();
 
 
-    return (
+    return (<>
         <section className="about section-padding pb-0" id="about" data-scroll-index="1">
         <div className="container">
             <div className="row">
@@ -22,7 +22,7 @@ export default function About() {
                         <div className="sub-title border-bot-light">{t('AboutUs')}</div>
                 </div>
                 <div className="col-md-9">
-                    <div className="section-title">Chffy</div>
+                        <div className="section-title">{t('AboutUsLabel')}</div>
                     <div className="row">
                         <div className="col-lg-6 col-md-12">
                                 <p>{t('About1')}</p>
@@ -32,7 +32,7 @@ export default function About() {
                                     <h3>4.9</h3>
                                 </div>
                                 <div className="features-caption">
-                                    <h3>Rating based on 2500+ reviews</h3>
+                                        <h3>{t('Ratings')}</h3>
                                     <div className="rating"> <span>
                                             <i className="star-rating"></i>
                                             <i className="star-rating"></i>
@@ -52,10 +52,25 @@ export default function About() {
                             </div>
                         </div>
                         </div>
-                        <div className="section-title mt-4 mb-2">{t('OurPartners')}</div>
-                        <p>{t('OurPartnersDesc')}</p>
+                </div>
+            </div>
+            </div>
+            
+       
+    </section>
 
-                        <Swiper
+    <section className="about section-padding pb-0" id="partners">
+        <div className="container">
+            <div className="row">
+                <div className="col-md-3">
+                        <div className="sub-title border-bot-light">{t('OurPartners')}</div>
+                </div>
+                <div className="col-md-9">
+                        <div className="section-title">{t('OurPartnersLabel')}</div>
+                    <div className="row">
+                        <div className="col-md-12">
+                                <p>{t('OurPartnersDesc')}</p>    
+                                <Swiper
                     className="logo-carousel wow fadeOut mt-3" data-wow-delay="0.3s"
                     spaceBetween={20}
                     slidesPerView={5}
@@ -90,7 +105,7 @@ export default function About() {
                         onClick={() => {
                             window.open('https://fortis.co/chauffeur-application/','_blank')
                         }}
-                        alt="fortis" width={170} height={40} />
+                        alt="Chauffeur Application Solutions" width={170} height={40} title="Chauffeur Application Solutions" />
                     </SwiperSlide>
                    
                     
@@ -99,15 +114,20 @@ export default function About() {
                          onClick={() => {
                             window.open('https://www.ggtworldwise.com/','_blank')
                         }}
-                        alt="ggtworldwise" width={70} height={70} />
+                        alt="Global Ground Transportation" width={70} height={70} title='Global Ground Transportation' />
                     </SwiperSlide>
-                </Swiper>
+                </Swiper>        
+                        </div>
+                   
+                        </div>
+
+                      
                 </div>
             </div>
             </div>
             
        
     </section>
-
+        </>
     );
 }
