@@ -17,105 +17,54 @@ export default function Cars() {
             <div className="container">
                 <div className="row mb-30">
                     <div className="col-md-3">
-                        <div className="sub-title border-bot-light">Discover</div>
+                        <div className="sub-title border-bot-light">{t('Discover')}</div>
                     </div>
                     <div className="col-md-9">
                         <div className="section-title">{t('OurCars')}</div>
-
-                        <p>{t('OurCarsDesc1')}</p>
-                        <p>{t('OurCarsDesc2')}</p>
-                        <p>{t('OurCarsDesc3')}</p>
-                        <p>{t('OurCarsDesc4')}</p>
+                        <p>{t('OurCarsDesc')}</p>
                         <div className="col-md-12 mt-5">
-                        {/* <Swiper
-                            className="wow fadeOut mt-3" data-wow-delay="0.3s"
-                            style={{ height: '350px' }}
-                            spaceBetween={20}
-                            slidesPerView={3}
-                            breakpoints={{
-                                319: {
-                                    slidesPerView: 1,
-                                    spaceBetween: 20,
-                                },
-                                640: {
-                                    slidesPerView: 2,
-                                    spaceBetween: 20,
-                                },
-                                768: {
-                                    slidesPerView: 2,
-                                    spaceBetween: 20,
-                                }
-                            }}
-                            centeredSlides
-                            modules={[Autoplay]}
-                            autoplay={{
-                                delay: 2200,
-                                pauseOnMouseEnter: false,
-                                disableOnInteraction: false,
-                            }}
-                            loop={true}
-                            key={`${i18next.language}swiper`}
-                            speed={3000}>
-      
-        
-                            <SwiperSlide>
-                                <div className="rooms3 mb-30">
-                                    <div className="room-img"><img src="/images/slider/3.jpg" alt="" className="w-100" /></div>
-                                    <div className="room-header">
-                                        <h3 className="room-label">Car 0</h3>
+                        <div className="row mb-30 wow fadeOut mt-3" data-wow-delay="0.3s">
+                                <div className="col-lg-4 col-md-12">
+                                    <div className="reservations mb-15">
+                                        <div className="icon"><Image src="/images/cars/Ford.png" alt="Ford" width={150} height={70} /></div>
+                                        <div className="text"><p>Ford</p></div>
+                                        <div className="text"><p>The Art of American Luxury</p></div>
                                     </div>
                                 </div>
-                            </SwiperSlide>
-                   
-                    
-                            <SwiperSlide>
-                                <div className="rooms3 mb-30">
-                                    <div className="room-img"><img src="/images/slider/1.jpg" alt="" className="w-100" /></div>
-                                    <div className="room-header">
-                                        <h3 className="room-label">Car 1</h3>
+                               
+                                <div className="col-lg-4 col-md-12">
+                                    <div className="reservations mb-15">
+                                        <div className="icon"><Image src="/images/cars/Chevrolet.png"
+                        alt="Chevrolet" width={120} height={60} /></div>
+                                        <div className="text"><p>Chevrolet</p></div>
+                                        <div className="text"><p>Iconic Comfort, Contemporary Design</p></div>
                                     </div>
-                     
                                 </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className="rooms3 mb-30">
-                                    <div className="room-img"><img src="/images/slider/3.jpg" alt="" className="w-100" /></div>
-                                    <div className="room-header">
-                                        <h3 className="room-label">Car 2</h3>
+                                <div className="col-lg-4 col-md-12">
+                                    <div className="reservations mb-15">
+                                        <div className="icon">   <Image src="/images/cars/GMC-Logo.png"
+                        alt="GMC" width={130} height={50} /></div>
+                                        <div className="text"><p>GMC</p></div>
+                                        <div className="text"><p>Boldness Meets Sophistication</p></div>
                                     </div>
-                 
                                 </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className="rooms3 mb-30">
-                                    <div className="room-img"><img src="/images/slider/5.jpg" alt="" className="w-100" /></div>
-                                    <div className="room-header">
-                                        <h3 className="room-label">Car 3</h3>
+                                <div className="col-lg-4 col-md-12">
+                                    <div className="reservations mb-15">
+                                        <div className="icon"> <Image src="/images/cars/Mercedes.png"
+                        alt="Mercedes" width={75} height={75} /></div>
+                                        <div className="text"><p>Mercedes-Benz</p></div>
+                                        <div className="text"><p>Synonymous with Elegance and Innovation</p></div>
                                     </div>
-                  
                                 </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className="rooms3 mb-30">
-                                    <div className="room-img"><img src="/images/slider/1.jpg" alt="" className="w-100" /></div>
-                                    <div className="room-header">
-                                        <h3 className="room-label">Car 4</h3>
+                                <div className="col-lg-4 col-md-12">
+                                    <div className="reservations mb-15">
+                                        <div className="icon"><Image src="/images/cars/bmw.png" alt="bmw" width={80} height={80} /></div>
+                                        <div className="text"><p>BMW</p></div>
+                                        <div className="text"><p>German Engineering at its Most Luxurious</p></div>
                                     </div>
-                   
                                 </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className="rooms3 mb-30">
-                                    <div className="room-img"><img src="/images/slider/4.jpg" alt="" className="w-100" /></div>
-                                    <div className="room-header">
-                                        <h3 className="room-label">Car 5</h3>
-                                    </div>
-             
-                                </div>
-                            </SwiperSlide>
-                      
-                        </Swiper> */}
-                             <Swiper
+                            </div>
+                             {/* <Swiper
                     className=" wow fadeOut mt-3" data-wow-delay="0.3s"
                             spaceBetween={20}
                 
@@ -171,7 +120,7 @@ export default function Cars() {
                     <Image src="/images/cars/Chevrolet.png"
                         alt="Chevrolet" width={120} height={60} />
                             </SwiperSlide>
-                </Swiper>
+                </Swiper> */}
                     </div>
                     </div>
                    

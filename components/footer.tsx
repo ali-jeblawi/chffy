@@ -47,9 +47,9 @@ export default function Footer() {
                         <div className="item">
                             <h3>Our Services</h3>
                             <ul className="footer-explore-list list-unstyled">
-                                    <li><a href="#services">{t('Service1Label')}</a></li>
-                                    <li><a href="#services">{t('Service2Label')}</a></li>
-                                    <li><a href="#services">{t('Service3Label')}</a></li>
+                                    <li><a href="#services">{t('Service1')}</a></li>
+                                    <li><a href="#services">{t('Service2')}</a></li>
+                                    <li><a href="#services">{t('Service3')}</a></li>
                             </ul>
                         </div>
                     </div>

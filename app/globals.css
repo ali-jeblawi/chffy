@@ -51,9 +51,9 @@ h6 {
 }
 
 img {
-    -webkit-transition: all 0.5s;
+    /* -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
-    transition: all 0.5s;
+    transition: all 0.5s; */
     color: #f4f4f4;
 }
 span,
@@ -670,7 +670,7 @@ color: var(--primary-color);
 .navbar .navbar-nav .nav-link {
     font-family: '__Rubik_0407f5', '__Rubik_Fallback_0407f5';
     font-size: 28px;
-    color: #222;
+    color: #fff;
     margin: 1px;
     -webkit-transition: all .4s;
     transition: all .4s;
@@ -687,9 +687,7 @@ color: var(--primary-color);
 .navbar .navbar-nav .active {
     color: #fff !important;
 }
-.navbar .navbar-nav .active i {
-    color: var(--primary-color);
-}
+
 .nav-scroll {
     background: #1b1b1b;
     padding: 15px 0;
@@ -738,7 +736,6 @@ color: var(--primary-color);
 .nav-scroll .logo-wrapper .logo span {
     color: var(--primary-color);
 }
-.nav-scroll .logo-wrapper {}
 .logo-wrapper {
     float: left;
 }
@@ -781,80 +778,8 @@ color: var(--primary-color);
 .logo-img {
     margin-bottom: 0px;
 }
-.dropdown .nav-link i {
-    padding-left: 0px;
-    font-size: 8px;
-    color: #fff;
-}
-.navbar .dropdown-menu .dropdown-item {
-    padding: 7px 0;
-    font-size: 15px;
-    font-weight: 300;
-    color: #fff;
-    position: relative;
-    -webkit-transition: all .4s;
-    transition: all .4s;
-    background-color: transparent;
-}
-.navbar .dropdown-menu .dropdown-item span {
-    display: block;
-    cursor: pointer;
-}
 
-.navbar .dropdown-menu .dropdown-item i {
-    padding: 13px 0 0 5px;
-    font-size: 8px;
-    float: right;
-}
-.navbar .dropdown-menu .dropdown:hover > .dropdown-item,
-.navbar .dropdown-menu .dropdown-item.active,
-.navbar .dropdown-menu .dropdown-item:hover {
-    color: var(--primary-color);
-}
-.navbar .dropdown-toggle::after {
-    display: none;
-}
-.navbar .dropdown-menu li {
-   border-bottom: 1px solid rgba(255, 255, 255, 0.02);
-}
-.navbar .dropdown-menu li:last-child {
-   border-bottom: none;
-}
-.navbar .dropdown-menu .dropdown-menu.pull-left {
-    top: 0;
-    left: auto;
-    right: 100%;
-}
-/* Navbar Media Query */
-@media screen and (min-width: 992px) {
-    .navbar .dropdown-menu {
-        display: block;
-        opacity: 0;
-        visibility: hidden;
-        -webkit-transform: translateY(20px);
-        transform: translateY(20px);
-        width: 200px;
-        padding: 15px;
-        border-radius: 0;
-        border: 0;
-        background-color: #282828;
-        -webkit-transition: all .3s;
-        transition: all .3s;
-    }
-    .navbar .dropdown-menu .dropdown-menu {
-        left: calc(100% + 5px);
-        top: -10px;
-        right: auto;
-        min-width: 200px;
-        transform: translateY(0);
-    }
-    .navbar .dropdown:hover > .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-        transition: 1s;
-    }    
-}
+
 @media screen and (max-width: 991px) {
     .navbar {
         padding-left: 0px;
@@ -3031,6 +2956,7 @@ font-size: 15px;
 
 .swiper-container .swiper-slide img{
     animation: kenburnsUpRight 3.5s ease-in;
+    object-fit: cover !important;
 }
 
 
@@ -3128,7 +3054,7 @@ font-size: 15px;
     width: 100vw;
     height: 100vh;
     padding: 2em;
-    background-color: var(--primary-color);
+    background-color: #212121;
     z-index: 9999;
     display: flex;
     clip-path: polygon(0% 0%,100% 0%,100% 0%,0% 0%);
@@ -3159,11 +3085,11 @@ font-size: 15px;
 	right: 0;
 	position: fixed;
 	z-index: 999999;
-	-webkit-box-shadow: 0px 10px 20px 0px rgba(79, 35, 35, 0.08);
-	box-shadow: 0px 10px 20px 0px rgba(79, 35, 35, 0.08);
+	-webkit-box-shadow: 0px 4px 20px 0px var(--primary-color);
+	box-shadow: 0px 4px 20px 0px var(--primary-color);
 	-webkit-animation: stickySlideDown 0.65s cubic-bezier(0.23, 1, 0.32, 1) both;
 	animation: stickySlideDown 0.65s cubic-bezier(0.23, 1, 0.32, 1) both;
-	background: var(--primary-color);
+	background: #212121;
 }
 
 
@@ -3257,5 +3183,49 @@ select{
     padding-inline-start: 0;
 }
 .hero-img{
-    object-fit: cover;
+    object-fit: cover !important;
+    transition: 0 !important;
+}
+.text-white,
+.text-white span{
+    color:#fff;
+}
+.video-wrapper{
+    position: relative;
+}
+.video-wrapper::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0,0,0.3);
+}
+.video-wrapper .container{
+    z-index: 3;
+    position: relative;
+}
+
+#cars .reservations{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+#cars .reservations{
+    min-height: 250px;
+}
+#cars .reservations .icon{
+    margin-bottom: 20px;
+}
+#cars .reservations .text{
+    text-align: center;
+    margin: 0;
+}
+#cars .reservations .text:last-child p{
+    font-size: 14px;
+    color: #999799;
 }

@@ -55,7 +55,7 @@ export default function Hero() {
         modules={[Autoplay, EffectFade]}
         effect="fade"
         autoplay={{
-          delay: 2200,
+          delay: 4200,
           pauseOnMouseEnter: false,
           disableOnInteraction: false,
         }}
@@ -64,16 +64,16 @@ export default function Hero() {
         speed={6500}>
       
         <SwiperSlide style={{ position: 'relative' }}>
-          <Image src="/images/slider/1.jpeg" alt="php" fill className='hero-img' />
+          <Image src="/images/slider/1.jpg" alt={t('Chffy')} style={{objectPosition:'80% 80%'}} fill className='hero-img' />
         </SwiperSlide>
         <SwiperSlide style={{ position: 'relative' }}>
-          <Image src="/images/about/2.jpg" alt="php" fill className='hero-img'  />
+          <Image src="/images/slider/2.jpg" alt={t('Chffy')} style={{objectPosition:'center'}} fill className='hero-img'  />
         </SwiperSlide>
         <SwiperSlide style={{ position: 'relative' }}>
-        <Image src="/images/about/3.jpg" alt="php" fill className='hero-img'  />
+        <Image src="/images/slider/3.jpg" alt={t('Chffy')} style={{objectPosition:'90% 90%'}} fill className='hero-img'  />
         </SwiperSlide>
         <SwiperSlide style={{ position: 'relative' }}>
-        <Image src="/images/about/4.jpg" alt="php" fill className='hero-img'  />
+        <Image src="/images/slider/4.jpg" alt={t('Chffy')} style={{objectPosition:'center'}} fill className='hero-img'  />
         </SwiperSlide>
       </Swiper>
     </aside>
