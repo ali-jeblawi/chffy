@@ -8,6 +8,7 @@ import "swiper/css/bundle";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "sweetalert2/src/sweetalert2.scss";
 import '../animate.min.css';
+import '../leaflet.css';
 import '../globals.css';
 
 const rubik = Rubik({

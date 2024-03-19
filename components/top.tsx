@@ -7,20 +7,22 @@ export default function Top() {
 
     const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         e.preventDefault();
+        if(window)
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     };
 
     useEffect(() => {
+        if(window)
         window.addEventListener("scroll", showElemOnScroll);
         return function cleanup() {
-            window.removeEventListener("scroll", showElemOnScroll);
+            window?.removeEventListener("scroll", showElemOnScroll);
         };
       
     }, // eslint-disable-next-line
         []);
     
     const showElemOnScroll = function () {
-        if (window.scrollY > 100) {
+        if (window && window.scrollY > 100) {
             document.querySelector(".navbar")?.classList.add("header-fixed");
             document.querySelector(".back-top")?.classList.add("d-flex");
             document.querySelector(".back-top")?.classList.remove("d-none");

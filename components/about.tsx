@@ -45,9 +45,9 @@ export default function About() {
                         </div>
                         <div className="col-lg-6 col-md-12">
                             <div className="row g-3">
-                                    <div className="col-6 text-end"> <img className="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="/images/about/4.jpg" style={{ marginTop: '25%'}} /> </div>
-                                <div className="col-6 text-start"> <img className="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="/images/about/3.jpg"/> </div>
-                                <div className="col-6 text-end"> <img className="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s" src="/images/about/2.jpg"/> </div>
+                                    <div className="col-6 text-end"> <img className="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="/images/about/2.jpg" style={{ marginTop: '25%'}} /> </div>
+                                <div className="col-6 text-start"> <img className="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="/images/call-to-action.jpg" /> </div>
+                                <div className="col-6 text-end"> <img className="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s" src="/images/about/3.jpg"/> </div>
                                 <div className="col-6 text-start"> <img className="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s" src="/images/about/1.jpg"/> </div>
                             </div>
                         </div>
@@ -103,6 +103,7 @@ export default function About() {
                     <SwiperSlide>
                     <Image src="/images/partners/Logo-Fortis.png"
                         onClick={() => {
+                            if(window)
                             window.open('https://fortis.co/chauffeur-application/','_blank')
                         }}
                         alt="Chauffeur Application Solutions" width={170} height={40} title="Chauffeur Application Solutions" />
@@ -112,6 +113,7 @@ export default function About() {
                     <SwiperSlide>
                     <Image src="/images/partners/c300-02.png"
                          onClick={() => {
+                            if(window)
                             window.open('https://www.ggtworldwise.com/','_blank')
                         }}
                         alt="Global Ground Transportation" width={70} height={70} title='Global Ground Transportation' />

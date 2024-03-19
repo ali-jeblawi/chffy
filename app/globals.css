@@ -2929,7 +2929,7 @@ font-size: 15px;
     width:100%;
     position: absolute;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 5;
 }
 
@@ -3228,4 +3228,14 @@ select{
 #cars .reservations .text:last-child p{
     font-size: 14px;
     color: #999799;
+}
+
+.ant-modal-content{
+    padding: 0 !important;
+}
+.ant-modal-close{
+    background-color: #fff !important;
+}
+.leaflet-control-attribution{
+    display: none !important;
 }

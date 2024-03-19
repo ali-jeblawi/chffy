@@ -64,7 +64,7 @@ export default function Hero() {
         speed={6500}>
       
         <SwiperSlide style={{ position: 'relative' }}>
-          <Image src="/images/slider/1.jpg" alt={t('Chffy')} style={{objectPosition:'80% 80%'}} fill className='hero-img' />
+          <Image src="/images/slider/1.png" alt={t('Chffy')} style={{objectPosition:'80% 80%'}} fill className='hero-img' />
         </SwiperSlide>
         <SwiperSlide style={{ position: 'relative' }}>
           <Image src="/images/slider/2.jpg" alt={t('Chffy')} style={{objectPosition:'center'}} fill className='hero-img'  />
