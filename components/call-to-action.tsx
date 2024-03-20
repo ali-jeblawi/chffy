@@ -12,7 +12,7 @@ export default function CallToAction() {
 
   
   return (
-    <section className="video-wrapper video section-padding bg-img bg-fixed" style={{backgroundAttachment:'fixed', backgroundImage: 'url(/images/call-to-action.jpg)',backgroundSize:'cover',backgroundPosition:'center'}}>
+    <section className="video-wrapper video section-padding bg-img bg-fixed" style={{backgroundAttachment:'fixed', backgroundImage: 'url(/images/call-to-action1.jpg)',backgroundSize:'cover',backgroundPosition:'center'}}>
     <div className="container">
         <div className="row justify-content-center">
             <div className="col-lg-10 col-md-12 text-center">
