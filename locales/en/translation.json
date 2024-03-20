@@ -47,6 +47,23 @@
     "Contact":"Contact Us",
     "Service1":"Hourly hires.",
     "Service2":"Per-trip service.",
-    "Service3":"Day-long hire."
+    "Service3":"Day-long hire.",
+    "StartingPoint":"Starting point",
+    "Name":"Name",
+    "Email":"Email",
+    "Phone":"Phone",
+    "TripType":"Trip type",
+    "Airport":"Airport",
+    "Other":"Other",
+    "ReservationType":"Reservation type",
+    "Hour":"Hour",
+    "Day":"Day",
+    "Trip":"Trip",
+    "Source":"Source",
+    "Destination":"Destination",
+    "ArrivalHour":"Arrival hour",
+    "AirlinesName":"Airlines name",
+    "TripNumber":"Trip number",
+    "NotAvialable":"Not avialable"
     
 }
