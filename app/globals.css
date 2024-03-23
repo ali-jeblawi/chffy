@@ -649,7 +649,10 @@ html[dir="rtl"] .sub-title {
     border-bottom: 1px solid var(--primary-color);
     padding: 8px 15px 15px 15px;
 }
-
+select img{
+    width: 50px !important;
+    height: 50px !important;
+}
 
 /* ======= Navbar style ======= */
 .navbar {
@@ -3311,3 +3314,13 @@ input[type="time"]::-webkit-calendar-picker-indicator{
     background-color: var(--primary-color);
     border-radius: 50%;
 }
+
+html[dir="rtl"] ::-ms-input-placeholder { 
+    direction: rtl !important;
+    text-align: right !important;
+  }
+  
+  html[dir="rtl"] ::placeholder {
+    direction: rtl !important;
+    text-align: right !important;
+  }
