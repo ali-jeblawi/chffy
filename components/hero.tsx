@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image'
-import Link from 'next/link'
 import React, { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next';
 import { Autoplay, EffectFade } from 'swiper/modules';

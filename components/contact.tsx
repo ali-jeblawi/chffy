@@ -146,7 +146,7 @@ export default function Contat() {
                                 <div className="reservations mb-15">
                                     <div className="icon"><span className="flaticon-call"></span></div>
                                     <div className="text">
-                                        <p>Phone Reservation</p> <a href="tel:855-100-4444">+966 57 458 4023</a>
+                                        <p>{t('Phone Reservation')}</p> <a target='_blank' dir="ltr" href="tel:855-100-4444">+966 57 458 4023</a>
                                     </div>
                                 </div>
                             </div>
@@ -154,7 +154,7 @@ export default function Contat() {
                                 <div className="reservations mb-15">
                                     <div className="icon"><span className="flaticon-envelope"></span></div>
                                     <div className="text">
-                                        <p>Email Info</p> <a href="mailto:info@chffy.com">info@chffy.com</a>
+                                        <p>{t('Email Info')}</p> <a target='_blank' href="mailto:info@chffy.com">info@chffy.com</a>
                                     </div>
                                 </div>
                             </div>
@@ -162,7 +162,7 @@ export default function Contat() {
                                 <div className="reservations mb-15">
                                     <div className="icon"><span className="flaticon-location-pin"></span></div>
                                     <div className="text">
-                                        <p>Address</p> 38 Broadway NY, 1001 USA
+                                        <p>{t('Address')}</p> 38 Broadway NY, 1001 USA
                                     </div>
                                 </div>
                             </div>
@@ -171,7 +171,7 @@ export default function Contat() {
                             <div className="col-md-12">
                                 <div className="row">
                                     <div className="col-md-12">
-                                        <h3>Get in touch</h3>
+                                        <h3>{t('Get in touch')}</h3>
                                         <form  className="contact__form" action="" onSubmit={(e) => {
                                 e.preventDefault();
                                             if (validateForm()) {
@@ -240,15 +240,15 @@ export default function Contat() {
                                            
                                             <div className="row">
                                                 <div className="col-md-4 form-group">
-                                                    <input type="text" placeholder="Your Name *" value={name} onChange={(e) => setName(e.target.value)} />
+                                                    <input type="text" placeholder={t("Your Name *")} value={name} onChange={(e) => setName(e.target.value)} />
                                                     {errors.name && <span className='error-msg'>{errors.name}</span>}
                                                 </div>
                                                 <div className="col-md-4 form-group">
-                                                    <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your Email *" />
+                                                    <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={t("Your Email *")} />
                                         {errors.email && <span className='error-msg'>{errors.email}</span>}
                                                 </div>
                                                 <div className="col-md-4 form-group">
-                                                    <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Your Phone *" />
+                                                    <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder={t("Your Phone *")} />
                                         {errors.phone && <span className='error-msg'>{errors.phone}</span>}
                                                 </div>
                                                 <div className="col-md-4 form-group">
@@ -258,7 +258,7 @@ export default function Contat() {
                                                         setTripNumber('');
                                                         setArrivalHour('');
                                                     }}>
-                                                        <option disabled  value={'-1'}>Trip type *</option>
+                                                        <option disabled value={'-1'}>{t('Trip type *')}</option>
                                                         <option value={'0'}>{t('Airport')}</option>
                                                         <option value={'1'}>{t('Other')}</option>
                                                     </select>
@@ -271,7 +271,7 @@ export default function Contat() {
                                                         setSource('');
                                                         setStartingPoint('');
                                                     }}>
-                                                        <option disabled value={"-1"}>Reservation type *</option>
+                                                        <option disabled value={"-1"}>{t('Reservation type *')}</option>
                                                         <option value={"0"}>{t('Hour')}</option>
                                                         <option value={"1"}>{t('Day')}</option>
                                                         <option value={"2"}>{t('Trip')}</option>
@@ -284,17 +284,17 @@ export default function Contat() {
                                                 {tripType === '0' && (
                                                     <>
                                                         <div className="col-md-4 form-group">
-                                                            <input type="text" placeholder="Trip number *" value={tripNumber} onChange={(e: any) => setTripNumber(e.target.value)} />
+                                                            <input type="text" placeholder={t("Trip number *")} value={tripNumber} onChange={(e: any) => setTripNumber(e.target.value)} />
                                                             {errors.tripNumber && <span className='error-msg'>{errors.reservationType}</span>}
 
                                                         </div>
                                                         <div className="col-md-4 form-group">
-                                                            <input type="time" placeholder="Arrival hour *"  onChange={(e: any) => setArrivalHour(e.target.value)} />
+                                                            <input type="time" placeholder={t("Arrival hour *")}  onChange={(e: any) => setArrivalHour(e.target.value)} />
                                                             {errors.arrivalHour && <span className='error-msg'>{errors.arrivalHour}</span>}
 
                                                         </div>
                                                         <div className="col-md-4 form-group">
-                                                            <input type="text" placeholder="Airlines name *" value={airlinesName} onChange={(e: any) => setAirlinesName(e.target.value)} />
+                                                            <input type="text" placeholder={t("Airlines name *")} value={airlinesName} onChange={(e: any) => setAirlinesName(e.target.value)} />
                                                             {errors.airlinesName && <span className='error-msg'>{errors.airlinesName}</span>}
                                                         </div>
                                                     </>
@@ -305,14 +305,14 @@ export default function Contat() {
                                                         <div className="col-md-4 form-group">
                                                             <textarea
                                                                 rows={3}
-                                                                placeholder="Source *" value={source}
+                                                                placeholder={t("Source *")} value={source}
                                                                 onClick={() => setOpenSourceModal(true)}
                                                                 readOnly />
                                                             {errors.source && <span className='error-msg'>{errors.source}</span>}
 
                                                         </div>
                                                         <div className="col-md-4 form-group">
-                                                            <textarea placeholder="Destination *"
+                                                            <textarea placeholder={t("Destination *")}
                                                                 onClick={(e) => { e.preventDefault(); setOpenDestinationModal(true) }}
                                                                 value={destination}
                                                                 rows={3}
@@ -323,7 +323,7 @@ export default function Contat() {
                                                 )}
                                                 {(reservationType === "0" || reservationType === "1") && (
                                                     <div className="col-md-4 form-group">
-                                                        <textarea placeholder="Starting point *" value={startingPoint}
+                                                        <textarea placeholder={t("Starting point *")} value={startingPoint}
                                                             rows={3}
                                                             onClick={() => setOpenStartingPointModal(true)}
                                                             readOnly />
@@ -338,7 +338,7 @@ export default function Contat() {
                                                     <textarea name="message" id="message" cols={30} rows={4} placeholder="Message *" required></textarea>
                                             </div> */}
                                                 <div className="col-md-12 mt-10">
-                                                    <button type="submit" className="butn-dark2"><span>Send Message</span></button>
+                                                    <button type="submit" className="butn-dark2"><span>{t('Send Message')}</span></button>
                                                 </div>
                                             </div>
                                         </form>

@@ -6,7 +6,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next';
 
 export default function Services() {
-    const { t } = useTranslation();
+    const { t,i18n } = useTranslation();
 
     return (
         <section className="amenities section-padding" id="services">
@@ -18,10 +18,13 @@ export default function Services() {
                 <div className="col-md-9">
                         <div className="section-title">{t('OurServicesLabel')}</div>
                         <p>{t('OurServicesDesc')}</p>
-                        <p>{t('OurServicesDesc2-1')}<Link style={{
-                            textDecoration: 'underline',
-                            color:'var(--primary-color)'
-                        }} href={'#contact'}>{t('GetInTouch')}</Link>{t('OurServicesDesc2-2')}</p>
+                        {i18n.language !== 'ar' && (<>
+                            <p>{t('OurServicesDesc2-1')}<Link style={{
+                                textDecoration: 'underline',
+                                color: 'var(--primary-color)'
+                            }} href={'#contact'}>{t('GetInTouch')}</Link>{t('OurServicesDesc2-2')}</p>
+                        </>)}
+                      
                         
                 </div>
             </div>

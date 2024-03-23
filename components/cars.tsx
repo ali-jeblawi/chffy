@@ -23,46 +23,47 @@ export default function Cars() {
                         <div className="section-title">{t('OurCars')}</div>
                         <p>{t('OurCarsDesc')}</p>
                         <div className="col-md-12 mt-5">
-                        <div className="row mb-30 wow fadeOut mt-3" data-wow-delay="0.3s">
-                                <div className="col-lg-4 col-md-12">
-                                    <div className="reservations mb-15">
-                                        <div className="icon"><Image src="/images/cars/Ford.png" alt="Ford" width={150} height={70} /></div>
-                                        <div className="text"><p>Ford</p></div>
-                                        <div className="text"><p>The Art of American Luxury</p></div>
-                                    </div>
-                                </div>
+                        <div className="row mb-30 mt-3">
+                             
                                
                                 <div className="col-lg-4 col-md-12">
                                     <div className="reservations mb-15">
                                         <div className="icon"><Image src="/images/cars/Chevrolet.png"
-                        alt="Chevrolet" width={120} height={60} /></div>
-                                        <div className="text"><p>Chevrolet</p></div>
-                                        <div className="text"><p>Iconic Comfort, Contemporary Design</p></div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4 col-md-12">
-                                    <div className="reservations mb-15">
-                                        <div className="icon">   <Image src="/images/cars/GMC-Logo.png"
-                        alt="GMC" width={130} height={50} /></div>
-                                        <div className="text"><p>GMC</p></div>
-                                        <div className="text"><p>Boldness Meets Sophistication</p></div>
+                        alt="Chevrolet" width={160} height={85} /></div>
+                                        <div className="text"><p>{t('Chevrolet')}</p></div>
+                                        <div className="text"><p>{t('Iconic Comfort, Contemporary Design')}</p></div>
                                     </div>
                                 </div>
                                 <div className="col-lg-4 col-md-12">
                                     <div className="reservations mb-15">
                                         <div className="icon"> <Image src="/images/cars/Mercedes.png"
                         alt="Mercedes" width={75} height={75} /></div>
-                                        <div className="text"><p>Mercedes-Benz</p></div>
-                                        <div className="text"><p>Synonymous with Elegance and Innovation</p></div>
+                                        <div className="text"><p>{t('Mercedes-Benz')}</p></div>
+                                        <div className="text"><p>{t('Synonymous with Elegance and Innovation')}</p></div>
                                     </div>
                                 </div>
                                 <div className="col-lg-4 col-md-12">
                                     <div className="reservations mb-15">
                                         <div className="icon"><Image src="/images/cars/bmw.png" alt="bmw" width={80} height={80} /></div>
-                                        <div className="text"><p>BMW</p></div>
-                                        <div className="text"><p>German Engineering at its Most Luxurious</p></div>
+                                        <div className="text"><p>{t('BMW')}</p></div>
+                                        <div className="text"><p>{t('German Engineering at its Most Luxurious')}</p></div>
                                     </div>
                                 </div>
+                                <div className="col-lg-4 col-md-12">
+                                    <div className="reservations mb-15">
+                                        <div className="icon">   <Image src="/images/cars/GMC-Logo.png"
+                        alt="GMC" width={170} height={65} /></div>
+                                        <div className="text"><p>{t('GMC')}</p></div>
+                                        <div className="text"><p>{t('Boldness Meets Sophistication')}</p></div>
+                                    </div>
+                                </div>   <div className="col-lg-4 col-md-12">
+                                    <div className="reservations mb-15">
+                                        <div className="icon"><Image src="/images/cars/Ford.png" alt="Ford" width={150} height={70} /></div>
+                                        <div className="text"><p>{t('Ford')}</p></div>
+                                        <div className="text"><p>{t('The Art of American Luxury')}</p></div>
+                                    </div>
+                                </div>
+                                
                             </div>
                              {/* <Swiper
                     className=" wow fadeOut mt-3" data-wow-delay="0.3s"

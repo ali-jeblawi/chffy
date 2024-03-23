@@ -5,13 +5,12 @@ import React from 'react'
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper';
-import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
 
 SwiperCore.use([Autoplay]);
 
 export default function About() {
-    const { t } = useTranslation();
+    const { t,i18n } = useTranslation();
 
 
     return (<>
@@ -45,10 +44,10 @@ export default function About() {
                         </div>
                         <div className="col-lg-6 col-md-12">
                             <div className="row g-3">
-                                    <div className="col-6 text-end"> <img className="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="/images/about/2.jpg" style={{ marginTop: '25%'}} /> </div>
-                                <div className="col-6 text-start"> <img className="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="/images/call-to-action.jpg" /> </div>
-                                <div className="col-6 text-end"> <img className="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s" src="/images/about/3.jpg"/> </div>
-                                <div className="col-6 text-start"> <img className="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s" src="/images/about/1.jpg"/> </div>
+                                    <div className={`col-6 ${i18n.language ==="ar"? 'text-start':'text-end'}`}> <img className="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="/images/about/2.jpg" style={{ marginTop: '25%'}} /> </div>
+                                <div className={`col-6 ${i18n.language ==="en"? 'text-start':'text-end'}`}> <img className="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="/images/call-to-action.jpg" /> </div>
+                                <div className={`col-6 ${i18n.language ==="ar"? 'text-start':'text-end'}`}> <img className="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s" src="/images/about/3.jpg"/> </div>
+                                <div className={`col-6 ${i18n.language ==="en"? 'text-start':'text-end'}`}> <img className="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s" src="/images/about/1.jpg"/> </div>
                             </div>
                         </div>
                         </div>
@@ -69,8 +68,22 @@ export default function About() {
                         <div className="section-title">{t('OurPartnersLabel')}</div>
                     <div className="row">
                         <div className="col-md-12">
-                                <p>{t('OurPartnersDesc')}</p>    
-                                <Swiper
+                                <p>{t('OurPartnersDesc')}</p>
+                                <div className='logo-carousel mt-3'>
+                                <Image src="/images/partners/Logo-Fortis.png"
+                        onClick={() => {
+                            if(window)
+                            window.open('https://fortis.co/chauffeur-application/','_blank')
+                        }}
+                                        alt="Chauffeur Application Solutions" width={150} height={35} title="Chauffeur Application Solutions" />
+                                        <Image src="/images/partners/c300-02.png"
+                         onClick={() => {
+                            if(window)
+                            window.open('https://www.ggtworldwise.com/','_blank')
+                        }}
+                        alt="Global Ground Transportation" width={55} height={55} title='Global Ground Transportation' />
+                                </div>
+                                {/* <Swiper
                     className="logo-carousel wow fadeOut mt-3" data-wow-delay="0.3s"
                     spaceBetween={20}
                     slidesPerView={5}
@@ -101,24 +114,14 @@ export default function About() {
       
         
                     <SwiperSlide>
-                    <Image src="/images/partners/Logo-Fortis.png"
-                        onClick={() => {
-                            if(window)
-                            window.open('https://fortis.co/chauffeur-application/','_blank')
-                        }}
-                        alt="Chauffeur Application Solutions" width={170} height={40} title="Chauffeur Application Solutions" />
+                   
                     </SwiperSlide>
                    
                     
                     <SwiperSlide>
-                    <Image src="/images/partners/c300-02.png"
-                         onClick={() => {
-                            if(window)
-                            window.open('https://www.ggtworldwise.com/','_blank')
-                        }}
-                        alt="Global Ground Transportation" width={70} height={70} title='Global Ground Transportation' />
+                
                     </SwiperSlide>
-                </Swiper>        
+                </Swiper>         */}
                         </div>
                    
                         </div>
