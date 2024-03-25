@@ -3345,8 +3345,10 @@ html[dir="rtl"] ::-ms-input-placeholder {
   .ant-picker{
     background: transparent !important;
     border-color:transparent !important ;
+    border: none;
     padding: 10px 0;
     line-height: 1.5em;
+    box-shadow: none !important;
     font-family: '__Rubik_0407f5', '__Rubik_Fallback_0407f5';
     font-size: 15px;
     font-weight: 300;
