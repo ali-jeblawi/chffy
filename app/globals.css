@@ -69,7 +69,7 @@ b {
 }
 /* text field */
 form .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 input[type="time"]:focus,
 input[type="password"]:focus,
@@ -166,6 +166,9 @@ input[type="submit"] {
     border-radius: 0px;
 }
 /* placeholder */
+*::placeholder{
+    color: #999 !important;
+}
 ::-webkit-input-placeholder {
     color: #999;
     font-size: 15px;
@@ -575,7 +578,7 @@ html[dir="rtl"] .section-subtitle {
     font-weight: 400;
     color: #fff;
     position: relative;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     line-height: 1.2em;
 }
 .section-title span {
@@ -1078,8 +1081,8 @@ hr {
     position: relative;
 }
 .hero-inner .caption h4 {
-    font-size: 12px;
-    font-weight: 300;
+    font-size: 13px;
+    font-weight: 600;
     letter-spacing: 6px;
     color: #fff;
     margin-bottom: 15px;
@@ -1104,7 +1107,7 @@ html[dir="rtl"] .hero-inner .caption h4 {
     font-weight: 400;
 }
 html[dir="rtl"] .hero-inner .caption h1 {
-    font-size: 65px;
+    font-size: 57px;
 }
 .hero-inner .caption h3 {
     position: relative;
@@ -1119,6 +1122,10 @@ html[dir="rtl"] .hero-inner .caption h1 {
     font-weight: 400;
 }
 @media screen and (max-width: 767px) {
+    .ant-picker-datetime-panel{
+        flex-direction: column !important;
+        z-index: 9999999;
+    }
 .hero-inner .caption h4 {
     font-size: 12px;
 }   
@@ -2200,26 +2207,17 @@ button.mfp-arrow {
     align-items: center;
     background: #282828;
     padding: 20px 15px;
+    justify-content: center;
 }
-.reservations .icon {
-    position: relative;
-    top: 3px;
-}
-.reservations .icon span {
-    font-size: 36px;
-    color: var(--primary-color);
-}
-.reservations .icon.color-1 span {
-    font-size: 40px;
-    color: #fff;
-}
+
 .reservations .text {
-    margin-left: 15px;
+    text-align: center;
 }
 .reservations .text p {
     font-family: '__Rubik_0407f5', '__Rubik_Fallback_0407f5';
     font-size: 20px;
     margin: 0;
+    text-align: center;
     color: #fff;
 }
 .reservations .text p.color-1 {
@@ -2588,12 +2586,11 @@ html[dir="rtl"] .butn-dark2 {
 
 /* ======= Footer style ======= */
 .footer {
-    padding: 90px 0 0;
+    padding: 40px 0 0;
     position: relative;
    border-top: 1px solid rgba(0,0,0,0.03);
     background: #101010;
 }
-.footer .top {}
 .footer .top .item h3 {
     position: relative;
     font-size: 30px;
@@ -2607,24 +2604,28 @@ html[dir="rtl"] .butn-dark2 {
     color: #fff;
 }
 .footer .top .item .phone {
-    font-size: 20px;
+    font-size: 15px;
     color: #fff;
     font-weight: 300;
-    display: block;
+    display: inline-block;
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
     margin-bottom: 5px;
+    position: relative;
     letter-spacing: 0px;
 }
 .footer .top .item .mail {
     font-size: 15px;
     line-height: 3em;
     color: #fff;
+    margin-bottom: 0;
     position: relative;
-    display: inline-block;
+    display: block;
+    width: fit-content;
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
 }
+.footer .top .item .phone:before,
 .footer .top .item .mail:before {
     position: absolute;
     bottom: 10px;
@@ -3032,7 +3033,7 @@ html[dir="rtl"] .footer-explore-list li a:before{
     display: flex;
     gap: 20px;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: space-between;
     height: 150px;
 	/* background-color: var(--primary-color);
 	background: -webkit-gradient(linear, left top, left bottom, from(#222), to(var(--primary-color)));
@@ -3238,6 +3239,8 @@ select{
 }
 .video-wrapper{
     position: relative;
+    height: 530px;
+    padding: 80px 0;
 }
 .video-wrapper::after{
     position: absolute;
@@ -3324,3 +3327,65 @@ html[dir="rtl"] ::-ms-input-placeholder {
     direction: rtl !important;
     text-align: right !important;
   }
+
+  .menu-overlay{
+    overflow: auto;
+  }
+
+ .star-rating,
+ .star-rating::before,
+ .star-rating::after{
+    border-bottom: 0.7em solid gold;
+  }
+
+  .ant-picker-dropdown{
+    z-index: 999999999999;
+  }
+
+  .ant-picker{
+    background: transparent !important;
+    border-color:transparent !important ;
+    padding: 10px 0;
+    line-height: 1.5em;
+    font-family: '__Rubik_0407f5', '__Rubik_Fallback_0407f5';
+    font-size: 15px;
+    font-weight: 300;
+    color: #999;
+    outline: none !important;
+    background-image: none;
+    border-bottom: 1px solid #282828 !important;
+    border-color: ease-in-out .15s, box-shadow ease-in-out .15s !important;
+}
+
+  .ant-picker:focus {
+    border-bottom-width: 1px !important;
+    border-color: var(--primary-color) !important;
+}
+.ant-picker-suffix{
+    color: #999 !important;
+}
+.anticon-close-circle path{
+    fill:#999 !important;
+}
+
+.ant-picker-content th{
+    font-size: 11px !important;
+}
+.ant-picker-cell-inner::before{
+    border-color: var(--primary-color) !important;
+}
+.ant-picker-cell-selected .ant-picker-cell-inner,
+.ant-btn:not([disabled]),
+.ant-picker-time-panel-cell-selected .ant-picker-time-panel-cell-inner{
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+}
+.ant-picker-panel-layout{
+    background-color: #212121 !important;
+}
+.ant-picker-panel-layout *:not(.ant-picker-cell-in-view){
+    color: #fff !important;
+}
+.ant-picker-cell:not(.ant-picker-cell-in-view) .ant-picker-cell-inner{
+    color: #bbb !important
+}

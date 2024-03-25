@@ -13,22 +13,23 @@ export default function Footer() {
         <div className="top">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-3 mb-30">
-                            <div className="sub-title border-footer-light whte">{t('ContactUs')}</div>
+                    <div className="col-md-3 mb-30 offset-md-1">
+                            {/* <div className="sub-title border-footer-light whte">{t('ContactUs')}</div> */}
                         <div className="logo-wrapper">
-          <Link className="logo mt-4" href={'/'}>
-            <Image src="/images/logo-white.png" className="logo-img" alt="" width={35} height={45} />
+          <Link className="logo mt-4 mb-3" href={'/'}>
+            <Image src="/images/logo-white.png" className="logo-img" alt="" width={55} height={65} />
             <span>{t('Chffy')}</span>
-          </Link>
+                                </Link>
+                                {/* <p>1616 Broadway NY, New York 10001
+                                <br/>United States of America.
+                            </p> */}
+                                <p>{t('HeaderDesc')}</p>
         </div>
                         </div>
                     <div className="col-md-4 offset-md-1">
                         <div className="item">
-                                <h3>{t('Get in touch')}</h3>
-                            <p>1616 Broadway NY, New York 10001
-                                <br/>United States of America.
-                            </p>
-                            <p className="phone"><a dir="ltr" href="tel:855-100-4444" target='_blank'>+966 57 458 4023</a></p>
+                                <h3>{t('ContactUs')}</h3>
+                            <p className="mail"><a dir="ltr" href="tel:855-100-4444" target='_blank'>+966 57 458 4023</a></p>
                             <p className="mail"><a href='mailto:info@chffy.com' target='_blank'>info@chffy.com</a></p>
                                 <div className="social mt-2">
                                     <a href="/">
@@ -43,7 +44,7 @@ export default function Footer() {
                                 </div>
                         </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-3">
                         <div className="item">
                                 <h3>{t('Services')}</h3>
                             <ul className="footer-explore-list list-unstyled">

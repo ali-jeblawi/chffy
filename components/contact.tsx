@@ -3,7 +3,7 @@
 import React, {  useEffect, useMemo, useRef, useState } from 'react'
 import { MapContainer, Marker, TileLayer, useMap} from 'react-leaflet'
 import { useTranslation } from 'react-i18next';
-import { Modal, Select} from 'antd';
+import { DatePicker, Modal, Select} from 'antd';
 import UtilsInstance, { countriesCode } from '@/helpers/utils';
 import ReactCountryFlag from 'react-country-flag';
 
@@ -56,6 +56,7 @@ export default function Contat() {
     const [phone, setPhone] = useState('');
     const [tripNumber, setTripNumber] = useState('');
     const [arrivalHour, setArrivalHour] = useState('');
+    const [reservationTime, setReservationTime] = useState('');
     const [airlinesName, setAirlinesName] = useState('');
     const [isLoadingMap, setIsLoadingMap] = useState(false);
     const [errors, setErrors] = useState({
@@ -70,6 +71,7 @@ export default function Contat() {
         reservationType: '',
         tripType: '',
         airlinesName: '',
+        reservationTime:''
     });
            
 
@@ -102,7 +104,7 @@ export default function Contat() {
         if ((reservationType === '0' || reservationType === '1') && !startingPoint) _errors.startingPoint = t('ThisFieldIsMandatory');
         if (reservationType === '2' && !destination) _errors.destination = t('ThisFieldIsMandatory');
         if (reservationType === '2' && !source) _errors.source = t('ThisFieldIsMandatory');
-
+        if(!reservationTime)_errors.reservationTime = t('ThisFieldIsMandatory');
         setErrors(_errors);
         return Object.keys(_errors).length === 0;
     };
@@ -147,7 +149,6 @@ export default function Contat() {
                         <div className="row mb-30">
                             <div className="col-lg-4 col-md-12">
                                 <div className="reservations mb-15">
-                                    <div className="icon"><span className="flaticon-call"></span></div>
                                     <div className="text">
                                         <p>{t('Phone Reservation')}</p> <a target='_blank' dir="ltr" href="tel:855-100-4444">+966 57 458 4023</a>
                                     </div>
@@ -155,7 +156,6 @@ export default function Contat() {
                             </div>
                             <div className="col-lg-4 col-md-12">
                                 <div className="reservations mb-15">
-                                    <div className="icon"><span className="flaticon-envelope"></span></div>
                                     <div className="text">
                                         <p>{t('Email Info')}</p> <a target='_blank' href="mailto:info@chffy.com">info@chffy.com</a>
                                     </div>
@@ -163,7 +163,6 @@ export default function Contat() {
                             </div>
                             <div className="col-lg-4 col-md-12">
                                 <div className="reservations mb-15">
-                                    <div className="icon"><span className="flaticon-location-pin"></span></div>
                                     <div className="text">
                                         <p>{t('Address')}</p> 38 Broadway NY, 1001 USA
                                     </div>
@@ -174,22 +173,22 @@ export default function Contat() {
                             <div className="col-md-12">
                                 <div className="row">
                                     <div className="col-md-12">
-                                        <h3>{t('Get in touch')}</h3>
-                                        <form  className="contact__form" action="" onSubmit={(e) => {
-                                e.preventDefault();
+                                        <h3 className='mt-5 mb-4'>{t('Get in touch')}</h3>
+                                        <form className="contact__form" action="" onSubmit={(e) => {
+                                            e.preventDefault();
                                             if (validateForm()) {
-                                    fetch("https://apis.cequens.net/email/send", {
-                                        method: 'POST',
-                                        headers: {
-                                            accept: 'application/json',
-                                            'Content-Type': 'application/json',
-                                            Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6ImIwMGFiYWE3ZTE1NjA1YWVhZDg3ODkzNGRkYzVhYzU5MmVhZGZmNzk3MTEwNTE1NGE2NjBmOWUwZGVmNmQyNDIyODZiYmUzY2Q4MjQyNTZmMjJmMGRiMTZkOGI0NDMzMmM3MjZkYThlNzBiMmFjOWRkNTViZWJhZDUzZDBkZTA3NTI0ODgyNzdjYTUzOGFiZDE0YjgwMGE3ZWRlYjMwOTMiLCJpYXQiOjE3MDc3Mjg4MTcsImV4cCI6MzI4NTYwODgxN30.gp0AmF70MNtr3dXusl7xiotfDCxVesvlLyxGE3AXnSY'
-                                        },
-                                        body: JSON.stringify({
-                                            "source": "Info@bialahapp.com",
-                                            "destinations": "info@atraslab.com",
-                                            "subject": t('NewContactRequest'),
-                                            "body": `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en" style="font-family:Tajawal, sans-serif"><head><meta charset="UTF-8"><meta content="width=device-width, initial-scale=1" name="viewport"><meta name="x-apple-disable-message-reformatting"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta content="telephone=no" name="format-detection"><title>CHFFY</title> <!--[if (mso 16)]><style type="text/css">     a {text-decoration: none;}     </style><![endif]--> <!--[if gte mso 9]><style>sup { font-size: 100% !important; }</style><![endif]--> <!--[if gte mso 9]><xml> <o:OfficeDocumentSettings> <o:AllowPNG></o:AllowPNG> <o:PixelsPerInch>96</o:PixelsPerInch> </o:OfficeDocumentSettings> </xml>
+                                                fetch("https://apis.cequens.net/email/send", {
+                                                    method: 'POST',
+                                                    headers: {
+                                                        accept: 'application/json',
+                                                        'Content-Type': 'application/json',
+                                                        Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6ImIwMGFiYWE3ZTE1NjA1YWVhZDg3ODkzNGRkYzVhYzU5MmVhZGZmNzk3MTEwNTE1NGE2NjBmOWUwZGVmNmQyNDIyODZiYmUzY2Q4MjQyNTZmMjJmMGRiMTZkOGI0NDMzMmM3MjZkYThlNzBiMmFjOWRkNTViZWJhZDUzZDBkZTA3NTI0ODgyNzdjYTUzOGFiZDE0YjgwMGE3ZWRlYjMwOTMiLCJpYXQiOjE3MDc3Mjg4MTcsImV4cCI6MzI4NTYwODgxN30.gp0AmF70MNtr3dXusl7xiotfDCxVesvlLyxGE3AXnSY'
+                                                    },
+                                                    body: JSON.stringify({
+                                                        "source": "Info@bialahapp.com",
+                                                        "destinations": "info@atraslab.com",
+                                                        "subject": t('NewContactRequest'),
+                                                        "body": `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en" style="font-family:Tajawal, sans-serif"><head><meta charset="UTF-8"><meta content="width=device-width, initial-scale=1" name="viewport"><meta name="x-apple-disable-message-reformatting"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta content="telephone=no" name="format-detection"><title>CHFFY</title> <!--[if (mso 16)]><style type="text/css">     a {text-decoration: none;}     </style><![endif]--> <!--[if gte mso 9]><style>sup { font-size: 100% !important; }</style><![endif]--> <!--[if gte mso 9]><xml> <o:OfficeDocumentSettings> <o:AllowPNG></o:AllowPNG> <o:PixelsPerInch>96</o:PixelsPerInch> </o:OfficeDocumentSettings> </xml>
                                             <![endif]--> <!--[if !mso]><!-- --><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&display=swap" rel="stylesheet"><!--<![endif]--><style type="text/css">#outlook a { padding:0;}.es-button { mso-style-priority:100!important; text-decoration:none!important;}a[x-apple-data-detectors] { color:inherit!important; text-decoration:none!important; font-size:inherit!important; font-family:inherit!important; font-weight:inherit!important; line-height:inherit!important;}.es-desk-hidden { display:none; float:left; overflow:hidden; width:0; max-height:0; line-height:0; mso-hide:all;} .es-button-border:hover a.es-button, .es-button-border:hover button.es-button { background:#f4a3c1!important;}
                                             .es-button-border:hover { border-color:#42d159 #42d159 #42d159 #42d159!important; background:#f4a3c1!important; border-style:solid solid solid solid!important;}@media only screen and (max-width:600px) {p, ul li, ol li, a { line-height:150%!important } h1, h2, h3, h1 a, h2 a, h3 a { line-height:120% } h1 { font-size:46px!important; text-align:center } h2 { font-size:26px!important; text-align:center } h3 { font-size:20px!important; text-align:center } .es-header-body h1 a, .es-content-body h1 a, .es-footer-body h1 a { font-size:46px!important } .es-header-body h2 a, .es-content-body h2 a, .es-footer-body h2 a { font-size:26px!important } .es-header-body h3 a, .es-content-body h3 a, .es-footer-body h3 a { font-size:20px!important } .es-menu td a { font-size:16px!important } .es-header-body p, .es-header-body ul li, .es-header-body ol li, .es-header-body a { font-size:16px!important }
                                              .es-content-body p, .es-content-body ul li, .es-content-body ol li, .es-content-body a { font-size:16px!important } .es-footer-body p, .es-footer-body ul li, .es-footer-body ol li, .es-footer-body a { font-size:16px!important } .es-infoblock p, .es-infoblock ul li, .es-infoblock ol li, .es-infoblock a { font-size:12px!important } *[class="gmail-fix"] { display:none!important } .es-m-txt-c, .es-m-txt-c h1, .es-m-txt-c h2, .es-m-txt-c h3 { text-align:center!important } .es-m-txt-r, .es-m-txt-r h1, .es-m-txt-r h2, .es-m-txt-r h3 { text-align:right!important } .es-m-txt-l, .es-m-txt-l h1, .es-m-txt-l h2, .es-m-txt-l h3 { text-align:left!important } .es-m-txt-r img, .es-m-txt-c img, .es-m-txt-l img { display:inline!important } .es-button-border { display:inline-block!important } a.es-button, button.es-button { font-size:18px!important; display:inline-block!important } .es-adaptive table, .es-left, .es-right { width:100%!important }
@@ -202,44 +201,44 @@ export default function Contat() {
                                             <td class="es-m-p0r es-m-p20b" valign="top" align="center" style="padding:0;Margin:0;width:560px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr><td align="center" style="padding:20px;Margin:0;font-size:0px"><a target="_blank" href="https://viewstripo.email" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#1C3B4E;font-size:18px"><img src="https://takvzk.stripocdn.email/content/guids/CABINET_6e1a5a558a83bdf868473747d1fec10112b42815e827bbc9b6ab6b02168a5435/images/logowhite.png" alt="Logo" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="100" title="Logo"></a> </td></tr><tr>
                                             <td align="center" style="padding:0;Margin:0"><h1 style="Margin:0;line-height:55px;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;font-size:46px;font-style:normal;font-weight:normal;color:#9d8560">${t('NewContactRequest')}</h1></td></tr><tr><td align="left" class="es-m-p15r" style="Margin:0;padding-bottom:5px;padding-left:10px;padding-right:10px;padding-top:15px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:27px;color:#1C3B4E;font-size:18px"><br></p></td></tr><tr><td align="center" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:27px;color:#9d8560;font-size:18px"><strong>${t('Name')}</strong></p></td></tr> <tr>
                                             <td align="center" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:23px;color:#ffffff;font-size:15px">${name}</p></td></tr><tr><td align="center" style="padding:0;Margin:0;padding-top:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:27px;color:#9d8560;font-size:18px"><strong>${t('Email')}</strong></p></td></tr><tr><td align="center" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:23px;color:#ffffff;font-size:15px">${email}</p></td></tr> <tr>
-                                            <td align="center" style="padding:0;Margin:0;padding-top:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:27px;color:#9d8560;font-size:18px"><strong>${t('Phone')}</strong></p></td></tr><tr><td align="center" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:23px;color:#ffffff;font-size:15px">${countrieCode +''+phone}</p></td></tr><tr><td align="center" style="padding:0;Margin:0;padding-top:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:27px;color:#9d8560;font-size:18px"><strong></strong><strong>${t('TripType')}</strong><strong></strong></p></td></tr> <tr>
-                                            <td align="center" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:23px;color:#ffffff;font-size:15px">${tripType==='0'?t('Airport'):t('Other')}</p></td></tr><tr><td align="center" style="padding:0;Margin:0;padding-top:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:27px;color:#9d8560;font-size:18px"><strong></strong><strong>${t('ReservationType')}</strong><strong></strong></p></td></tr><tr><td align="center" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:23px;color:#ffffff;font-size:15px">${reservationType==='0'?t('Hour'):reservationType==='1'?t('Day'):t('Trip')}</p></td></tr> <tr>
+                                            <td align="center" style="padding:0;Margin:0;padding-top:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:27px;color:#9d8560;font-size:18px"><strong>${t('Phone')}</strong></p></td></tr><tr><td align="center" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:23px;color:#ffffff;font-size:15px">${countrieCode + '' + phone}</p></td></tr><tr><td align="center" style="padding:0;Margin:0;padding-top:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:27px;color:#9d8560;font-size:18px"><strong></strong><strong>${t('TripType')}</strong><strong></strong></p></td></tr> <tr>
+                                            <td align="center" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:23px;color:#ffffff;font-size:15px">${tripType === '0' ? t('Airport') : t('Other')}</p></td></tr><tr><td align="center" style="padding:0;Margin:0;padding-top:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:27px;color:#9d8560;font-size:18px"><strong></strong><strong>${t('ReservationType')}</strong><strong></strong></p></td></tr><tr><td align="center" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:23px;color:#ffffff;font-size:15px">${reservationType === '0' ? t('Hour') : reservationType === '1' ? t('Day') : t('Trip')}</p></td></tr> <tr>
                                             <td align="center" style="padding:0;Margin:0;padding-top:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:27px;color:#9d8560;font-size:18px"><strong>${t('StartingPoint')}</strong></p></td></tr><tr><td align="center" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:23px;color:#ffffff;font-size:15px">${startingPoint || t('NotAvialable')}</p></td></tr><tr><td align="center" style="padding:0;Margin:0;padding-top:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:27px;color:#9d8560;font-size:18px"><strong></strong><strong>${t('Source')}</strong><strong></strong></p></td></tr> <tr>
                                             <td align="center" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:23px;color:#ffffff;font-size:15px">${source || t('NotAvialable')}</p></td></tr><tr><td align="center" style="padding:0;Margin:0;padding-top:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:27px;color:#9d8560;font-size:18px"><strong></strong><strong>${t('Destination')}</strong><strong></strong></p></td></tr><tr><td align="center" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:23px;color:#ffffff;font-size:15px">${destination || t('NotAvialable')}</p></td></tr> <tr>
                                             <td align="center" style="padding:0;Margin:0;padding-top:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:27px;color:#9d8560;font-size:18px"><strong>${t('ArrivalHour')}</strong></p></td></tr><tr><td align="center" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:23px;color:#ffffff;font-size:15px">${arrivalHour || t('NotAvialable')}</p></td></tr><tr><td align="center" style="padding:0;Margin:0;padding-top:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:27px;color:#9d8560;font-size:18px"><strong>${t('AirlinesName')}</strong></p></td></tr> <tr>
                                             <td align="center" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:23px;color:#ffffff;font-size:15px">${airlinesName || t('NotAvialable')}</p></td></tr><tr><td align="center" style="padding:0;Margin:0;padding-top:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:27px;color:#9d8560;font-size:18px"><strong>${t('TripNumber')}</strong></p></td></tr><tr><td align="center" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Tajawal, sans-serif;line-height:23px;color:#ffffff;font-size:15px">${tripNumber || t('NotAvialable')}</p></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr> </table></div></body></html>`
-                                        })
-                                    }).then(function (data) {
-                                        if (data.ok) {
-                                            Swal.fire({
-                                                title: t('DoneSuccessfully'),
-                                                text: t('DoneSuccessfully1'),
-                                                icon: 'success',
-                                                confirmButtonText: t('Close')
-                                            });
-                                            setName('');
-                                            setEmail('');
-                                            setPhone('');
-                                            setSource('');
-                                            setStartingPoint('');
-                                            setDestination('');
-                                            setArrivalHour('');
-                                            setAirlinesName('');
-                                            setTripNumber('');
-                                            setReservationType('-1');
-                                            setTripType('-1');
-                                        } else {
-                                            Swal.fire({
-                                                title: t('AnErrorOccurred'),
-                                                text: t('AnErrorOccurred1'),
-                                                icon: "error",
-                                                confirmButtonText: t("OK"),
-                                            });
-                                        }
+                                                    })
+                                                }).then(function (data) {
+                                                    if (data.ok) {
+                                                        Swal.fire({
+                                                            title: t('DoneSuccessfully'),
+                                                            text: t('DoneSuccessfully1'),
+                                                            icon: 'success',
+                                                            confirmButtonText: t('Close')
+                                                        });
+                                                        setName('');
+                                                        setEmail('');
+                                                        setPhone('');
+                                                        setSource('');
+                                                        setStartingPoint('');
+                                                        setDestination('');
+                                                        setArrivalHour('');
+                                                        setAirlinesName('');
+                                                        setTripNumber('');
+                                                        setReservationType('-1');
+                                                        setTripType('-1');
+                                                    } else {
+                                                        Swal.fire({
+                                                            title: t('AnErrorOccurred'),
+                                                            text: t('AnErrorOccurred1'),
+                                                            icon: "error",
+                                                            confirmButtonText: t("OK"),
+                                                        });
+                                                    }
                                             
-                                    });
-                                }
-                            }}>
+                                                });
+                                            }
+                                        }}>
                                            
                                             <div className="row">
                                                 <div className="col-md-4 form-group">
@@ -248,13 +247,14 @@ export default function Contat() {
                                                 </div>
                                                 <div className="col-md-4 form-group">
                                                     <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={t("Your Email *")} />
-                                        {errors.email && <span className='error-msg'>{errors.email}</span>}
+                                                    {errors.email && <span className='error-msg'>{errors.email}</span>}
                                                 </div>
-                                                <div className="col-md-4 form-group d-flex" dir='ltr'>
+                                                <div className="col-md-4 form-group" dir='ltr'>
+                                                    <div className="d-flex w-100">
                                                     <select style={{ width: '80px', direction: "ltr" }} value={countrieCode} onChange={(e: any) => {
                                                         setCountrieCode(e.target.value);
                                                     }}>
-                                                        {countriesCode.map((item, index) => (<option  key={index} value={item.dial_code}>
+                                                        {countriesCode.map((item, index) => (<option key={index} value={item.dial_code}>
                                                             {/* <ReactCountryFlag countryCode={item.code}
                                                             svg
                                                             cdnUrl="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/"
@@ -263,8 +263,10 @@ export default function Contat() {
                                                         /> */}
                                                             {item.dial_code}</option>))}
                                                     </select>
-                                                    <input style={{width:'calc(100% - 80px)',paddingInline:'10px'}} maxLength={10} type="text" value={phone} onChange={(e) => setPhone(UtilsInstance.preventString(e.target.value))} placeholder={t("Your Phone *")} />
-                                        {errors.phone && <span className='error-msg'>{errors.phone}</span>}
+                                                    <input style={{ width: 'calc(100% - 80px)', paddingInline: '10px' }} maxLength={10} type="text" value={phone} onChange={(e) => setPhone(UtilsInstance.preventString(e.target.value))} placeholder={t("Your Phone *")} />
+                                                  
+                                                    </div>
+                                                     {errors.phone && <span className='error-msg'>{errors.phone}</span>}
                                                 </div>
                                                 <div className="col-md-4 form-group">
                                                     <select value={tripType} onChange={(e: any) => {
@@ -295,7 +297,61 @@ export default function Contat() {
 
                                                 </div>
                                                 <div className="col-md-4 form-group">
-                                                </div>
+                                                        <DatePicker
+                                                                style={{ width: '100%' }}
+                                                                showTime
+                                                        onChange={(v, date) => setReservationTime(date as string)}
+                                                        showNow={false}
+                                                        use12Hours={false}
+
+                  locale={
+                    {
+                      "lang": {
+                        "locale": "ar_EG",
+                        "placeholder": t("SelectDate"),
+                        "rangePlaceholder": [t("StartDate"), t("EndDate")],
+                        "today": t('Today'),
+                        "now": t('Now'),
+                          "backToToday": "Back to today",
+                          "ok": t('OK3'),
+                          "clear": "Clear",
+                          "month": "Month",
+                          "year": "Year",
+                          "timeSelect": "Select time",
+                          "dateSelect": "Select date",
+                          "monthSelect": "Choose a month",
+                          "yearSelect": "Choose a year",
+                          "decadeSelect": "Choose a decade",
+                          "yearFormat": "YYYY",
+                          "dateFormat": "M/D/YYYY",
+                          "dayFormat": "D",
+                          "dateTimeFormat": "M/D/YYYY HH:mm:ss",
+                          "monthFormat": "MM",
+                          "monthBeforeYear": true,
+                          "previousMonth": "Previous month (PageUp)",
+                          "nextMonth": "Next month (PageDown)",
+                          "previousYear": "Last year (Control + left)",
+                          "nextYear": "Next year (Control + right)",
+                          "previousDecade": "Last decade",
+                          "nextDecade": "Next decade",
+                          "previousCentury": "Last century",
+                          "nextCentury": "Next century",
+                          "shortWeekDays": [t('Sun'), t('Mon'),  t('Tue'),  t('Wed'),  t('Thu'),  t('Fri'),  t('Sat')],
+                        },
+                        "timePickerLocale": {
+                          "placeholder": "Select time"
+                        },
+                        "dateFormat": "YYYY-MM-DD",
+                        "dateTimeFormat": "YYYY-MM-DD HH:mm:ss",
+                        "weekFormat": "YYYY-wo",
+                        "monthFormat": "YYYY-MM"
+                      }
+                    }
+                  placeholder={t("Reservation time *")!}
+                  format={'D/MM/YYYY - hh:mm A'}
+                />
+                                                            {errors.reservationTime && <span className='error-msg'>{errors.reservationTime}</span>}
+</div>
                                                 {tripType === '0' && (
                                                     <>
                                                         <div className="col-md-4 form-group">
@@ -304,7 +360,58 @@ export default function Contat() {
 
                                                         </div>
                                                         <div className="col-md-4 form-group">
-                                                            <input type="time" placeholder={t("Arrival hour *")}  onChange={(e: any) => setArrivalHour(e.target.value)} />
+                                                            <DatePicker
+                                                                use12Hours={false}
+                                                                style={{ width: '100%' }}
+                                                                showTime
+                  onChange={(v,date) => setArrivalHour(date as string)}
+                  locale={
+                    {
+                      "lang": {
+                        "locale": "ar_EG",
+                        "placeholder": t("SelectDate"),
+                        "rangePlaceholder": [t("StartDate"), t("EndDate")],
+                        "today": t('Today'),
+                        "now": t('Now'),
+                          "backToToday": "Back to today",
+                          "ok": t('OK3'),
+                          "clear": "Clear",
+                          "month": "Month",
+                          "year": "Year",
+                          "timeSelect": "Select time",
+                          "dateSelect": "Select date",
+                          "monthSelect": "Choose a month",
+                          "yearSelect": "Choose a year",
+                          "decadeSelect": "Choose a decade",
+                          "yearFormat": "YYYY",
+                          "dateFormat": "M/D/YYYY",
+                          "dayFormat": "D",
+                          "dateTimeFormat": "M/D/YYYY HH:mm:ss",
+                          "monthFormat": "MM",
+                          "monthBeforeYear": true,
+                          "previousMonth": "Previous month (PageUp)",
+                          "nextMonth": "Next month (PageDown)",
+                          "previousYear": "Last year (Control + left)",
+                          "nextYear": "Next year (Control + right)",
+                          "previousDecade": "Last decade",
+                          "nextDecade": "Next decade",
+                          "previousCentury": "Last century",
+                          "nextCentury": "Next century",
+                          "shortWeekDays": [t('Sun'), t('Mon'),  t('Tue'),  t('Wed'),  t('Thu'),  t('Fri'),  t('Sat')],
+                        },
+                        "timePickerLocale": {
+                          "placeholder": "Select time"
+                        },
+                        "dateFormat": "YYYY-MM-DD",
+                        "dateTimeFormat": "YYYY-MM-DD HH:mm:ss",
+                        "weekFormat": "YYYY-wo",
+                        "monthFormat": "YYYY-MM"
+                      }
+                    }
+                  placeholder={t("Arrival hour *")!}
+                                                                format={'D/MM/YYYY - hh:mm A'}
+                                                                showNow={false}
+                />
                                                             {errors.arrivalHour && <span className='error-msg'>{errors.arrivalHour}</span>}
 
                                                         </div>
@@ -346,8 +453,6 @@ export default function Contat() {
 
                                                     </div>
                                                 )}
-                                               
-                                             
                                                
                                                 {/* <div className="col-md-12 form-group">
                                                     <textarea name="message" id="message" cols={30} rows={4} placeholder="Message *" required></textarea>

@@ -91,5 +91,18 @@
     "Source *":"Source *",
     "Destination *":"Destination *",
     "Starting point *":"Starting point *",
-    "Chffy - All right reserved.":" Chffy - All right reserved."
+    "Reservation time *":"Reservation time *",
+    "ReservationTime":"Reservation time",
+    "Chffy - All right reserved.":" Chffy - All right reserved.",
+    "OK3":"OK",
+    "Now":"Now",
+    "Sun":"Sun",
+    "AM": "AM",
+    "PM": "PM",
+    "Mon":"Mon",
+    "Tue":"Tue",
+    "Wed":"Wed",
+    "Thu":"Thu",
+    "Fri":"Fri",
+    "Sat":"Sat"
 }

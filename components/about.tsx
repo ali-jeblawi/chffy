@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import React from 'react'
 import { Autoplay } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper';
 import { useTranslation } from 'react-i18next';
 
@@ -14,7 +13,7 @@ export default function About() {
 
 
     return (<>
-        <section className="about section-padding pb-0" id="about" data-scroll-index="1">
+        <section className="about section-padding" id="about" data-scroll-index="1">
         <div className="container">
             <div className="row">
                 <div className="col-md-3">
@@ -28,7 +27,7 @@ export default function About() {
                                 <p>{t('About2')}</p>
                                 <div className="ratting-point mt-30 mb-30">
                                 <div className="features-ratting">
-                                    <h3>4.9</h3>
+                                    <h3>5</h3>
                                 </div>
                                 <div className="features-caption">
                                         <h3>{t('Ratings')}</h3>
@@ -58,7 +57,7 @@ export default function About() {
        
     </section>
 
-    <section className="about section-padding pb-0" id="partners">
+    <section className="about section-padding " id="partners">
         <div className="container">
             <div className="row">
                 <div className="col-md-3">

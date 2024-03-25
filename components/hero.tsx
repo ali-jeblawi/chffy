@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next';
 import { Autoplay, EffectFade } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -13,8 +13,7 @@ const WOW = !isServer ? require('wowjs') : null;
 
 SwiperCore.use([Autoplay]);
 export default function Hero() {
-  const { t } = useTranslation();
-  const heroSection = useRef<any>(null);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const w = new WOW.WOW().init();
@@ -27,7 +26,7 @@ export default function Hero() {
         <div className="v-middle caption text-center">
           <div className="container">
             <div className="row justify-content-center h-100 w-100">
-              <div className="col-lg-8 col-md-12 m-auto"> <span>
+              <div className={`${i18n.language ==='ar'?'col-lg-10':'col-lg-8'} col-md-12 m-auto`}> <span>
                 <i className="star-rating"></i>
                 <i className="star-rating"></i>
                 <i className="star-rating"></i>
