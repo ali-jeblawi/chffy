@@ -348,7 +348,7 @@ export default function Contat() {
                       }
                     }
                   placeholder={t("Reservation time *")!}
-                  format={'D/MM/YYYY - hh:mm'}
+                  format={'D/MM/YYYY - HH:mm'}
                 />
                                                             {errors.reservationTime && <span className='error-msg'>{errors.reservationTime}</span>}
 </div>
@@ -409,7 +409,7 @@ export default function Contat() {
                       }
                     }
                   placeholder={t("Arrival hour *")!}
-                                                                format={'D/MM/YYYY - hh:mm'}
+                                                                format={'D/MM/YYYY - HH:mm'}
                                                                 showNow={false}
                 />
                                                             {errors.arrivalHour && <span className='error-msg'>{errors.arrivalHour}</span>}
