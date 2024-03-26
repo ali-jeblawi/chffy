@@ -116,7 +116,7 @@ export default function Navbar() {
            
             <li className="nav-item">
               <span
-                className="nav-link"
+                className="nav-link arabic"
                 style={{cursor:'pointer'}}
               onClick={() => {
                   handleCloseSideMenu();

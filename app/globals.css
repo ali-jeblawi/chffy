@@ -20,6 +20,10 @@ body {
     word-wrap: break-word;
     font-family: '__Rubik_0407f5', '__Rubik_Fallback_0407f5' !important;
 }
+html[dir="rtl"] *,
+html[dir="ltr"] .arabic{
+    font-family: '__arabicFont_6c33ab', '__arabicFont_Fallback_6c33ab' !important;
+}
 body {
     font-family: '__Rubik_0407f5', '__Rubik_Fallback_0407f5';
     font-size: 15px;

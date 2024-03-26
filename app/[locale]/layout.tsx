@@ -3,6 +3,7 @@ import TranslationsProvider from '@/components/translations-provider'
 import initTranslations from '@/app/i18n'
 import { dir } from 'i18next'
 import { Rubik } from 'next/font/google'
+import localFont from 'next/font/local';
 
 import "swiper/css/bundle";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,6 +19,14 @@ const rubik = Rubik({
   weight: ['400','500','600','700']
 });
 
+const arabicFont = localFont({
+  src: [
+    {
+      path: '../../public/fonts/arabic-font.otf',
+      style: 'normal',
+    },
+  ],
+});
 
 
 export async function generateMetadata({ params: { locale } }: any): Promise<Metadata> {
@@ -47,7 +56,7 @@ export default async function RootLayout({
       <meta name="msapplication-TileColor" content="#222"/>
 <meta name="theme-color" content="#222"/>
       </head>
-      <body className={rubik.className}  suppressHydrationWarning={true}>
+      <body className={`${rubik.className} ${arabicFont.className}`}  suppressHydrationWarning={true}>
         <TranslationsProvider resources={resources} locale={locale}>
             {children}
         </TranslationsProvider>

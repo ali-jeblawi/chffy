@@ -1,18 +1,17 @@
 'use client';
 
 import React, {  useEffect, useMemo, useRef, useState } from 'react'
-import { MapContainer, Marker, TileLayer, useMap} from 'react-leaflet'
 import { useTranslation } from 'react-i18next';
 import { DatePicker, Modal, Select} from 'antd';
 import UtilsInstance, { countriesCode } from '@/helpers/utils';
-import ReactCountryFlag from 'react-country-flag';
+// import { MapContainer, Marker, TileLayer, useMap} from 'react-leaflet'
+const { MapContainer, Marker, TileLayer, useMap} = require("react-leaflet");
 
 const Swal = require("sweetalert2/dist/sweetalert2.js");
 
 const props={center:[ 24.69999996, 46.73333003], zoom: 13, scrollWheelZoom: false,draggable:true};
 
 function DraggableMarker({position, setPosition}:any) {
-    const [draggable, setDraggable] = useState(false);
     const markerRef = useRef(null)
     const eventHandlers = useMemo(
       () => ({
