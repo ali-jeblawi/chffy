@@ -157,21 +157,21 @@ export default function Contat() {
                             <div className="col-lg-4 col-md-12">
                                 <div className="reservations mb-15">
                                     <div className="text">
-                                        <p>{t('Phone Reservation')}</p> <a target='_blank' dir="ltr" href="tel:855-100-4444">+966 57 458 4023</a>
+                                    <p>{t('Phone Reservation')}</p> <a target='_blank' dir="ltr" href="tel:00966503670676">+966 50 367 0676</a>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-lg-4 col-md-12">
                                 <div className="reservations mb-15">
                                     <div className="text">
-                                        <p>{t('Email Info')}</p> <a target='_blank' href="mailto:info@chffy.com">info@chffy.com</a>
+                                    <p>{t('Email Info')}</p> <a target='_blank' href="mailto:Contact@gulftravy.com">Contact@gulftravy.com</a>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-lg-4 col-md-12">
                                 <div className="reservations mb-15">
                                     <div className="text">
-                                        <p>{t('Address')}</p> 38 Broadway NY, 1001 USA
+                                        <p>{t('Address')}</p> {t('Address1')}
                                     </div>
                                 </div>
                             </div>
